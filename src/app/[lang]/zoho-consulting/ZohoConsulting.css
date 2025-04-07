@@ -1,0 +1,262 @@
+/* =======================================
+   HERO SECTION
+======================================= */
+.zoho-hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/images/Zoho-bg.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.zoho-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.zoho-hero h1 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Overpass', sans-serif;
+  font-size: 3.5rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =======================================
+   INTRODUCTION SECTION
+======================================= */
+.zoho-intro-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.zoho-intro-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.zoho-intro-section p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* =======================================
+   SERVICES GRID
+======================================= */
+.zoho-services-grid {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.zoho-service-card {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.zoho-service-card .card {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.zoho-service-card .card-description {
+  flex-grow: 1;
+}
+
+/* =======================================
+   CTA SECTION
+======================================= */
+.cta-section {
+  position: relative;
+  padding: 80px 20px;
+  margin-top: 60px;
+  background-image: url('/assets/images/cta-background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  color: white;
+  border-radius: 25px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button .MuiButton-root {
+  background-color: #9c27b0;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button .MuiButton-root:hover {
+  background-color: #7b1fa2;
+  color: #ffffff;
+}
+
+/* =======================================
+   CONTACT SECTION
+======================================= */
+.contact-section {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.contact-section h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  background-color: #d4b051;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #b89242 !important;
+}
+
+/* =======================================
+   MODAL CONTENT
+======================================= */
+.modal-content {
+  background-color: #fff;
+  max-width: 600px;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  padding: 30px;
+  outline: none;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* =======================================
+   RESPONSIVE DESIGN
+======================================= */
+@media (max-width: 960px) {
+  .zoho-hero {
+    height: 40vh;
+  }
+
+  .zoho-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .cta-section {
+    padding: 60px 15px;
+  }
+
+  .cta-button {
+    width: 88%;
+  }
+}
+
+@media (max-width: 600px) {
+  .zoho-hero {
+    height: 30vh;
+  }
+
+  .zoho-hero h1 {
+    font-size: 2rem;
+  }
+
+  .section-image {
+    max-width: 100%;
+  }
+
+  .cta-section {
+    padding: 40px 10px;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+} 

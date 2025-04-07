@@ -1,7 +1,8 @@
-.site-footer {
+.footer {
   background-color: #222;
   color: #fff;
-  padding: 3rem 0 1rem;
+  padding: 60px 20px;
+  font-family: 'Arial, sans-serif';
 }
 
 .footer-container {
@@ -10,68 +11,116 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .footer-section {
-  flex: 1;
-  min-width: 200px;
-  margin-bottom: 2rem;
+  flex: 1 1 200px;
+  margin: 20px;
 }
 
 .footer-section h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #f5f5f5;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #f4b400;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  font-size: 1em;
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #f4b400;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.footer-section li {
-  margin-bottom: 0.5rem;
+.footer-section ul li {
+  margin-bottom: 10px;
 }
 
-.footer-section a {
-  color: #ccc;
-  text-decoration: none;
+.social-media a {
+  color: #bbb;
+  margin-right: 15px;
   transition: color 0.3s ease;
 }
 
-.footer-section a:hover {
-  color: #fff;
+.social-media a:hover {
+  color: #f4b400;
 }
 
-.contact-info address {
-  font-style: normal;
-  line-height: 1.6;
-  color: #ccc;
+.awards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.awards img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.awards-title {
+  margin-top: 10px;
 }
 
 .footer-bottom {
   text-align: center;
-  padding-top: 2rem;
+  margin-top: 40px;
   border-top: 1px solid #444;
-  margin-top: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem 0;
+  padding-top: 20px;
+  font-size: 0.9em;
+  color: #bbb;
 }
 
-.footer-bottom p {
-  font-size: 0.9rem;
-  color: #888;
+/* Social Icons */
+.social-icons {
+  display: flex;
+  align-items: center;
 }
 
+.social-icons a {
+  color: #bbb;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f4b400;
+}
+
+/* 24/7 Contact Notice */
+.contactable-notice {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #f4b400;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .awards {
+    justify-content: center;
   }
   
   .footer-section {
-    margin-bottom: 1.5rem;
+    flex: auto;
   }
 } 

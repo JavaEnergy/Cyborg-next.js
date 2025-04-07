@@ -1,0 +1,130 @@
+.accordion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  gap: 16px;
+  transition: 0.3s;
+  list-style: none;
+  padding: 0;
+}
+
+.accordion:hover {
+  gap: 0;
+}
+
+.accordion li {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 80px;
+  border-radius: 50px;
+  opacity: 0.75;
+  cursor: pointer;
+  transition: flex 0.3s, transform 0.3s, opacity 0.3s;
+}
+
+.accordion li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.5);
+  transition: filter 0.3s;
+}
+
+.accordion li:hover {
+  flex: 0 1 260px;
+  transform: scale(1.1);
+  z-index: 10;
+  opacity: 1;
+}
+
+.accordion li:hover img {
+  filter: grayscale(0);
+}
+
+.accordion li .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color: #fff;
+  padding: 15px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.accordion li:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.accordion li .content span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 50px;
+  transform: translate(-50%, 0);
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.accordion li:hover .content span {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Modal Styles */
+.accordion-modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 0 24px 10px;
+  border-radius: 8px;
+  outline: none;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-full-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .accordion-modal-box {
+    width: 80%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion-modal-box {
+    width: 95vw;
+    padding: 12px;
+  }
+} 

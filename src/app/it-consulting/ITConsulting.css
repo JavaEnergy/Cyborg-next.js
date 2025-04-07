@@ -1,0 +1,234 @@
+/* Hero Section */
+.it-consulting-hero {
+  position: relative;
+  height: 40vh; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.it-consulting-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);/* Dark overlay */
+  z-index: 1;
+}
+
+.it-consulting-hero h1 {
+  position: relative;
+  z-index: 2; /* Above overlay */
+  font-family: 'Overpass', sans-serif;
+  font-size: 3.5rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Image */
+.section-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.section-image:hover {
+  transform: scale(1.02);
+}
+
+/* Consulting Section */
+.consulting-section {
+  margin-top: 60px;
+  white-space: pre-line;
+}
+
+.consulting-section h2 {
+  margin-bottom: 20px;
+}
+
+.consulting-section p {
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.service-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.service-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Modal Styles */
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Buttons */
+.MuiButton-containedPrimary {
+  background-color: #007BFF;
+}
+
+.MuiButton-containedPrimary:hover {
+  background-color: #0056b3;
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: #007BFF; /* Vibrant Blue Background */
+  color: #ffffff; /* White Text for Contrast */
+  padding: 60px 20px; /* Increased Padding for Better Spacing */
+  margin-top: 60px;
+  text-align: center;
+  border-radius: 8px; /* Slightly Increased Border Radius */
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Optional Overlay for Depth */
+  z-index: 0;
+}
+
+.cta-section h5 {
+  font-size: 2rem; /* Increased Font Size */
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section p {
+  font-size: 1.2rem; /* Adequate Font Size for Readability */
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .cta-button {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .cta-button .MuiButton-root {
+  padding: 12px 30px;
+  font-size: 1rem;
+  background-color: #9c27b0; /* Purple Button Background */
+  color: #ffffff; /* White Text for Contrast */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-section .cta-button .MuiButton-root:hover {
+  background-color: #7b1fa2; /* Darker Purple on Hover */
+  color: #ffffff; /* White Text on Hover */
+}
+
+/* Contact Section */
+.contact-section {
+  margin-top: 60px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .consulting-section {
+    margin-top: 40px;
+  }
+
+  .section-image {
+    margin-top: 20px;
+  }
+
+  .it-consulting-hero {
+    height: 50vh; /* Reduce height for smaller screens */
+    background-position: top; /* Adjust positioning */
+  }
+
+  .it-consulting-hero h1 {
+    font-size: 2.5rem; /* Smaller text for mobile */
+  }
+
+  .cta-section {
+    padding: 40px 15px;
+  }
+
+  .cta-section h5 {
+    font-size: 1.5rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .cta-section .cta-button .MuiButton-root {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .it-consulting-hero {
+    height: 40vh;
+  }
+
+  .it-consulting-hero h1 {
+    font-size: 2rem;
+  }
+
+  .section-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  /* Additional small screen adjustments */
+  .modal-content {
+    padding: 20px;
+    width: 95%;
+  }
+} 

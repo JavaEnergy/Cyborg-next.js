@@ -1,0 +1,395 @@
+{
+    "menu": {
+      "about_us": "About Us",
+      "it_consulting": "IT Consulting",
+      "web_development": "Web Development",
+      "it_services": "IT Services",
+      "contact_us": "Contact",
+      "zoho_consulting": "ZOHO Software"
+  
+  
+    },
+    "footer_copyright": "All rights reserved.",
+    "common": {
+      "get_started": "Get Started",
+      "learn_more": "Learn More",
+      "contact_us": "Contact Us"
+    },
+  
+    "footer": {
+      "contact_info": "Contact Information",
+      "social": "Social Media",
+      "company": "Company",
+      "useful_links": "Useful Links",
+      "company_services": "Services",
+      "company_contact_us": "Contact Us",
+      "useful_about_us": "About Us",
+      "useful_legal": "Privacy Policy & Terms",
+      "contactable_24_7": "We are available 24/7 to assist you!"
+    },
+  
+  
+    "home": {
+      "title": "High-Quality, Cost-Effective IT Solutions, 24/7.",
+      "subtitle": "Your Vision, Our Expertise",
+      "vision_content": "We are Cyborg, a fusion of human ingenuity and machine precision.",
+      "vision_content2": "Based in Georgia, we offer cost-effective solutions without the added expense of European taxes.",
+      "wish_content": "Our team of skilled professionals is available 24/7 to bring your ideas to life.",
+      "services_title": "Our Services",
+      "service_it_consulting_title": "IT Consulting",
+      "service_it_consulting_description": "Strategic IT solutions to drive your business.",
+      "service_web_development_title": "Web Development",
+      "service_web_development_description": "Creating responsive and engaging websites tailored to your needs.",
+      "service_it_services_title": "Zoho Software",
+      "service_it_services_description": "Comprehensive IT support and management for seamless operations.",
+      "projects_title": "Our Projects",
+      "project_one_title": "Project One",
+      "project_one_description": "A brief description of Project One.",
+      "project_1_title": "Responsive Animated Shop Card",
+      "project_1_description": "Designed and developed an interactive, fully responsive shop card with smooth animations, ensuring optimal presentation across all devices.",
+      "project_2_title": "Bookly",
+      "project_2_description": "Flutter-based mobile application for managing your book collection and orders.",
+      "project_3_title":  "Neon Tube Clock Project",
+      "project_3_description": "A stylish neon tube clock showing real time with dynamic lighting and toggle.",
+      "project_view_more": "Learn More",
+      "contact_title": "Contact Us",
+      "contact_name_placeholder": "Your Name",
+      "contact_email_placeholder": "Your Email",
+      "contact_message_placeholder": "Your Message",
+      "contact_submit_button": "Send Message",
+      "faq_title": "Frequently Asked Questions",
+      "faq_question_1": "What services do you offer?",
+      "faq_answer_1": "We offer IT consulting, web development, and IT services.",
+      "faq_question_2": "How can I contact you?",
+      "faq_answer_2": "You can use the contact form on this page or email us directly.",
+      "faq_question_3": "Do you offer custom solutions?",
+      "faq_answer_3": "Yes, we tailor our services to your specific needs.",
+      "page_title": "Home - Cyborg IT Technology",
+      "page_description": "Welcome to Cyborg IT Technology. We provide top-notch IT consulting and development services.",
+      "project_2_more_info": "Bookly, developed by Cyborg, is a feature-rich Flutter mobile app that allows users to securely register and log in, manage their passwords, browse and search through various book categories, filter books based on preferences, add books to their wish lists, make secure credit card payments, store delivery addresses, place and track orders, access frequently asked questions, and subscribe to newsletters."  ,
+      "close": "Close"
+  
+    },
+    
+      "it_consulting": {
+      "page_title": "IT Consulting - Cyborg IT Technology",
+      "page_description": "Professional IT consulting services to help your business thrive in the digital age.",
+      "it_consulting": "IT Consulting",
+      "from_idea_to_implementation": "From Idea to Reality",
+  "content_for_from_idea_to_implementation": "Got an idea? We'll bring it to life. \n\n From websites to mobile apps, we've got you covered.",
+      "content_for_it_strategy": "Need tech advice?\n\nWe'll help you choose the right tools and technologies.",
+      "software_consulting": "Software Consulting",
+      "it_strategy": "IT strategy and digitalization",
+      "content_for_software_consulting": "Software solutions that fit your business perfectly.",
+      "it_security": "IT Security & Audits",
+      "content_for_it_security": "Protect your business from cyber threats like fake forms, attacks, or click fraud.",
+      "software_development_consulting": "Software Development Consulting",
+      "software_development_consulting_description": "Customized software solutions tailored to your unique business needs.",
+      "web_consulting": "Web Consulting",
+      "web_consulting_description": "Create a strong online presence.",
+      "mobile_consulting": "Mobile Consulting",
+      "mobile_consulting_description": "Develop engaging mobile apps.",
+      "saas_consulting": "SaaS Consulting",
+      "saas_consulting_description": "Optimize your business processes with SaaS.",
+      "cloud_consulting": "Cloud Consulting",
+      "cloud_consulting_description": "Cloud solutions, simplified.",
+      "ready_to_transform": "Ready to Transform Your Business?",
+      "take_next_step": "Take the next step towards digital excellence with our expert IT consulting services.",
+      "software_development_consulting_more_info": "Our experienced developers help you plan, build, and integrate custom software that aligns with your business goals. From small internal tools to large-scale platforms, we ensure scalability, top security, and seamless support throughout the entire lifecycle.",
+      "web_consulting_more_info": "Our web consulting covers platform selection, performance optimization, and security best practices. With a focus on user experience, we guide you in building modern websites that convert visitors into customers. Our experts guarantee smooth deployment and ongoing maintenance.",
+      "mobile_consulting_more_info": "We specialize in building mobile apps that stand out. From native to cross-platform solutions, we focus on intuitive design, high performance, and seamless integration with your existing systems. Let us handle the technical details so you can focus on delivering value to your users.",
+      "cloud_consulting_more_info": "Our cloud experts handle everything from migration planning to continuous optimization. We design architectures that are scalable, cost-effective, and secure—enabling you to innovate faster and outperform competitors. Enjoy peace of mind knowing your data is safeguarded and accessible anywhere.",
+      "it_security_audits_more_info": "Protect your organization’s reputation and sensitive data with comprehensive security audits. We identify vulnerabilities, apply best-in-class safeguards, and ensure ongoing compliance. Our certified specialists promise safer systems, minimal risk, and total peace of mind.",
+      "close": "Close",
+      "contact_us": "Contact Us",
+      "ai_consulting": "AI Consulting",
+      "ai_consulting_description": "We integrate AI to create new possibilities at lower costs.",
+      "ai_consulting_more_info": "Our AI Consulting service leverages cutting-edge platforms (like 10Web.io) to build intelligent web solutions quickly and cost-effectively. Whether you need AI-assisted website creation, chatbots, or personalized content recommendations, we offer end-to-end guidance. Our experts ensure robust performance and security so your business can thrive in the AI era."
+    
+    },
+   "web_development": {
+    "page_title": "Web Development - Cyborg IT Technology",
+      "page_description": "Expert web development services tailored to your business needs.",
+      "web_development": "Web Development",
+      "our_services": "Our Services",
+      "services_intro": "We offer a wide range of web development services:",
+      "wordpress": "WordPress Development",
+      "content_for_wordpress": "We create custom WordPress websites tailored to your needs.",
+      "react_applications": "React Applications",
+      "content_for_react_applications": "We develop dynamic React applications.",
+      "angular_development": "Angular Development",
+      "content_for_angular_development": "Our team builds robust Angular applications.",
+      "e_commerce": "Product Configurator",
+      "content_for_e_commerce": "We design intuitive product configurators that let customers customize and preview their products in real time.",
+      "custom_software": "Custom Software Solutions",
+      "content_for_custom_software": "We develop software tailored to your specific requirements.",
+      "technologies_tools": "Technologies & Tools",
+      "content_for_technologies_tools": "We use the latest technologies and tools to deliver the best results.",
+      "ready_to_transform": "Ready to Transform Your Business?",
+      "cta_description": "Partner with us to take your digital presence to the next level.",
+      "services_title": "Your vision, our mission",
+      "which_tool_title": "Which Tool Should You Choose?",
+      "which_tool_intro": "Not sure if WordPress, React, or Angular is right for you? Explore below:",
+      "faq_wordpress_title": "When to Use WordPress?",
+      "faq_wordpress_content": "Ideal for blogs or small-to-medium sites needing a powerful CMS without heavy coding.",
+      "faq_react_title": "When to Use React?",
+      "faq_react_content": "Great for building interactive, dynamic single-page apps requiring high performance.",
+      "faq_angular_title": "When to Use Angular?",
+      "faq_angular_content": "Perfect for large-scale, enterprise applications where strong structure is essential.",
+      "contact_us": "Contact Us",
+      "wordpress_more_info": "Leverage the world’s most popular CMS with our WordPress experts. We offer seamless theme customizations, performance optimizations, and robust security measures. Our team guarantees a worry-free setup and long-term support, ensuring your website scales with your business.",
+      "react_more_info": "Our React specialists build modern, efficient, and highly interactive applications. Whether you need a dynamic user interface or a scalable single-page app, we ensure top performance and maintainability. We stand by you from concept to deployment, guaranteeing a smooth, on-time implementation.",
+      "angular_more_info": "Get enterprise-grade solutions backed by our Angular pros. We design complex, data-rich applications that remain user-friendly and stable at scale. From architecture planning to final rollout, we provide full support and guarantee reliable performance for every use case.",
+      "ecommerce_more_info": "Empower customers to personalize and visualize products in real time with our advanced product configurators. Our team crafts intuitive user flows and seamless integrations, guaranteeing a boost in sales and overall customer satisfaction. We handle every technical detail so you can focus on growth.",
+      "custom_software_more_info": "Transform your unique ideas into powerful custom software solutions. Our experts analyze your requirements, design scalable architectures, and implement cutting-edge functionalities. We promise a secure, future-proof product, tailored to your business goals and guaranteed to meet your exact needs.",
+      "close": "Close"
+  
+    
+    },
+    "it_services": {
+      "full_service_it": "Full-Service IT",
+      "content_for_full_service_it": "We provide comprehensive IT services.",
+      "server_management": "Server Management",
+      "content_for_server_management": "We manage and maintain your servers.",
+      "cloud_backup": "Cloud Solutions & Backup",
+      "content_for_cloud_backup": "Secure cloud solutions and backup services.",
+      "user_support": "User Support",
+      "content_for_user_support": "We support your users."
+    },
+    "about_us": {
+      "hero_title": "Welcome to Cyborg",
+      "hero_subtitle": "Innovative IT Solutions Tailored for You",
+      "who_we_are_title": "Who We Are",
+      "who_we_are_content": "At Cyborg, we are a forward-thinking startup dedicated to delivering cutting-edge IT solutions. Our fresh entry into the industry equips us with innovative ideas and an unbounded passion for technology. We believe that our newness allows us to offer unique perspectives, agile solutions, and personalized attention that established companies might overlook.",
+      "our_mission_title": "Our Mission",
+      "our_mission_content": "Our mission is to bridge the gap between affordability and quality in the IT sector. We strive to provide exceptional services that empower businesses to thrive in the digital age. By leveraging the latest technologies and the ingenuity of our team, we aim to become your trusted partner in innovation.",
+      "our_advantage_title": "Our Advantage",
+      "advantage_point1": "Innovative Thinking: We offer creative solutions tailored to your specific needs.",
+      "advantage_point2": "Agility: Our streamlined processes allow us to quickly adapt to changing requirements.",
+      "advantage_point3": "Personalized Service: We give individual attention to each client to ensure your vision is realized.",
+      "advantage_point4": "Competitive Pricing: Our lean structure enables us to offer high-quality services at unbeatable prices.",
+      "advantage_point5": "24/7 Support: Our commitment to you doesn't end with project delivery. We're here for you around the clock.",
+      "how_we_work_title": "How We Work",
+      "how_we_work_step1_title": "Reach Out to Us",
+      "how_we_work_step1_desc": "Contact us anytime—our team is available 24/7.",
+      "how_we_work_step2_title": "Discovery Call",
+      "how_we_work_step2_desc": "We'll schedule a virtual meeting to understand your goals and requirements.",
+      "how_we_work_step3_title": "Tailored Proposal",
+      "how_we_work_step3_desc": "Receive a customized plan with transparent pricing and timelines.",
+      "how_we_work_step4_title": "Seamless Execution",
+      "how_we_work_step4_desc": "Our expert team implements your project, keeping you updated throughout.",
+      "how_we_work_step5_title": "Ongoing Support",
+      "how_we_work_step5_desc": "Post-launch, we provide continuous support to ensure sustained success.",
+      "faq_title": "Frequently Asked Questions",
+      "faq_q1": "How can your newness benefit my project?",
+      "faq_a1": "Our fresh approach means we're highly motivated to impress and excel. We embrace innovative solutions and are flexible to adapt to your unique needs, offering personal service and dedication that drives success.",
+      "faq_q2": "Do you really offer 24/7 support?",
+      "faq_a2": "Absolutely! We understand that questions and issues can arise at any time. Our team is always ready to assist you, minimizing any disruption to your operations.",
+      "faq_q3": "How do you maintain high quality at competitive prices?",
+      "faq_a3": "By working efficiently and leveraging the latest technologies, we reduce overhead without compromising on quality. Our focus is on delivering value to you.",
+      "faq_q4": "What industries do you specialize in?",
+      "faq_a4": "Our diverse team has expertise across various industries, including finance, healthcare, e-commerce, and more. We're adaptable and eager to understand and tackle the unique challenges of your sector.",
+      "about_title": "About Us",
+      "about_text": "In a world defined by rapid technological advancement, we are the architects of the future.",
+      "about_text2": "We are Cyborg, a fusion of human ingenuity and machine precision. ",
+      "about_text3": "As an outsourcing company equipped with skilled professionals, our services include IT solutions, Web development, and software consulting,to empower our clients to achieve their visions. ",
+      "mission_text": "Based in Georgia, we offer cost-effective solutions without additional taxes that are mandatory in EU.",
+      "mission_text2": "We speak your language, whether it’s German, or English, ensuring seamless communication, 24/7;",
+      "mission_text3": "And we are committed to delivering excellence, every step of the way.",
+      "mission_title": "Cyborg: High-Quality, Cost-Effective IT Solutions, 24/7.",
+      "faq_question_1": "How long does a typical project take?",
+      "faq_answer_1": "The project duration depends on its complexity. Once we understand your requirements, we will provide a detailed schedule.",
+  
+      "faq_question_2": "How do you handle project changes or unexpected requirements?",
+      "faq_answer_2": "We are flexible. If your project needs change, we will adjust our plans accordingly.",
+  
+      "faq_question_3": "How do you ensure data security and privacy?",
+      "faq_answer_3": "We take data security very seriously. We use advanced security measures to protect your information.",
+  
+      "faq_question_4": "How often do I get updates on my project?",
+      "faq_answer_4": "We keep you updated regularly, either through weekly meetings or email updates.",
+  
+      "faq_question_5": "Are there any additional fees or taxes, and why is no VAT charged?",
+    "faq_answer_5": "No, the price we quote is your final price. We are based in Georgia and are not subject to EU VAT (value-added tax).\n\nIn summary:\n- Private customers (B2C) in Germany, Austria, or Switzerland pay no additional taxes or fees.\n- Business customers (B2B) in D-A-CH apply the reverse-charge mechanism. This means that your company reports the VAT directly to the respective tax office.\n\nIn detail:\n- Our services are provided in Georgia, so no VAT is applicable for customers in D-A-CH. We pay our taxes in accordance with Georgian law.\n- For business customers (B2B) in Germany, Austria, and Switzerland, the reverse-charge mechanism typically applies: You, as the recipient of the service, calculate the VAT yourself and remit it to the respective tax office. At the same time, you can usually claim it back as input tax, resulting in no actual tax burden.\n\nIf you have any further questions, please feel free to contact us directly."
+  
+      ,"faq_question_6": "Do you offer maintenance and support after project completion?",
+      "faq_answer_6": "Yes, we offer ongoing maintenance and support to ensure your systems continue to run smoothly.",
+  
+      "faq_question_7": "How can I reach you?",
+      "faq_answer_7": "You can reach us by email at info@cyborg-it.de, via WhatsApp at +995 597 01 03 09, or using the contact form on our website."
+  ,"faq_contact_btn": "Contact Us",
+      "faq_offer_btn": "Request a Quote",
+      "page_title": "About Us - Cyborg IT Technology",
+      "page_description": "Learn more about Cyborg IT Technology, our mission, vision, and the team behind our success."
+   
+      },
+    "zoho_consulting": {
+      "page_title": "Zoho Consulting - Cyborg IT Technology",
+      "page_description": "Comprehensive Zoho consulting services to optimize your business processes.",
+      "title": "Zoho Consulting",
+      "intro_title": "What is Zoho?",
+      "intro_description": "Zoho is a comprehensive suite of cloud-based applications designed to enhance your business operations. With over 40 integrated apps, Zoho provides solutions for CRM, finance, project management, collaboration, and much more.",
+      "zoho_crm": "Zoho CRM",
+      "zoho_crm_description": "Streamline your sales process and manage customer relationships effectively.",
+      "zoho_crm_more_info": "Zoho CRM helps you connect with your customers, automate sales processes, and enhance your business relationships. It offers powerful tools for lead management, sales automation, and analytics to drive your business growth.",
+      "zoho_finance": "Zoho Finance",
+      "zoho_marketing": "Zoho Marketing",
+      "zoho_human_resources": "Zoho HR",
+      "zoho_marketing_description": "Automate your marketing campaigns and engage customers efficiently.",
+      "zoho_marketing_more_info": "Zoho Marketing enables you to create, execute, and track your marketing campaigns with ease. Utilize email marketing, social media integration, and comprehensive analytics to reach and engage your target audience effectively.",
+      "finance": "Finance",
+      "finance_description": "Manage your finances, billing, and invoicing all in one place.",
+      "finance_more_info": "Our Finance solutions provide comprehensive tools for managing your company's financial operations. From invoicing and expense tracking to financial reporting and compliance, streamline all your financial processes efficiently.",
+  
+      "human_resources": "Human Resources",
+      "human_resources_description": "Streamline HR processes from recruitment to payroll.",
+      "human_resources_more_info": "Zoho Human Resources offers a complete suite for managing your workforce. Handle recruitment, onboarding, performance evaluations, and payroll seamlessly, ensuring your HR operations are both effective and efficient.",
+  
+      "custom_development": "Custom Development",
+      "custom_development_description": "Tailored solutions built specifically for your business needs.",
+      "custom_development_more_info": "Our Custom Development services provide bespoke software solutions tailored to your unique business requirements. Whether you need a custom CRM, inventory system, or any other application, we deliver scalable and reliable solutions to drive your business forward.",
+  
+      "cta_title": "Ready to Transform Your Business?",
+      "cta_description": "Let us help you implement Zoho solutions to maximize growth and efficiency.",
+      "contact_us": "Contact Us",
+      "close": "Close"
+    },
+    "contact_us": {
+      "page_title": "Contact Us - Cyborg IT Technology",
+      "page_description": "Get in touch with Cyborg IT Technology for any inquiries, support, or business opportunities.",
+      "title": "Get in Touch",
+      "subtitle": "We'd love to hear from you 24/7. Please fill out the form below.",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject\u0020(optional)",
+      "message": "Message",
+      "submit": "Send Message",
+      "address_title": "Our Office",
+      "address_line1": "",
+      "address_line2": "",
+      "phone": "Phone: (+995) 597-011309",
+      "email_contact": "Email: info@cyborg-it.de",
+      "follow_us": "Follow Us",
+      "linkedin": "LinkedIn",
+      "whatsapp_24_7": "Available 24/7 on WhatsApp"
+    },
+    "legal": {
+      "page_title": "Legal - Cyborg IT Technology",
+      "page_description": "Legal information and policies related to Cyborg IT Technology.",
+      "title": "Privacy Policy and Terms of Use",
+      
+      "privacy_policy_title": "Privacy Policy",
+      "privacy_policy_aim": "DATA PROTECTION POLICY\n\nAIM OF THE DATA PROTECTION POLICY\nCyborg is fully committed to complying with applicable data protection laws, as we believe that ensuring data protection is the basis of trustworthy business relationships.\n\nWe are always working to stay compliant - encouraging audits, certifications, and providing industry-standard contractual protections.\n\nThis Data Protection Policy ensures the level of data protection prescribed by the European Union Data Protection Regulations and provides one of the necessary framework conditions for cross-border data transmission.\n\nThis Data Protection Policy applies to all companies of Cyborg, affiliated companies, and their employees and is based on globally accepted, basic principles of data protection.\n\nThe latest version of the Data Protection Policy can be accessed with the data privacy information on Cyborg’s website at: cyborg-it.de",
+      
+      "privacy_policy_commitment": "PRINCIPLES OF PERSONAL DATA PROCESSING\n\nWe collect and use (process) certain types of information (Personal Data) that relate to the people (Data Subjects) we interact with to carry out our business.\n\nWe are confident that when processing personal data, individual rights must be protected, which means that all personal data must be collected and processed in a legal and fair manner.\n\nTherefore, we presume and agree that Personal Data shall be:",
+      
+      "privacy_policy_principles_title": "Principles of Personal Data Processing",
+      "privacy_policy_principles_intro": "Personal data shall be:",
+      "privacy_policy_principles.a": "Processed lawfully, fairly, and in a transparent manner in relation to the data subject ('lawfulness, fairness, and transparency');",
+      "privacy_policy_principles.b": "Collected for specified, explicit, and legitimate purposes and not further processed in a manner that is incompatible with those purposes ('purpose limitation');",
+      "privacy_policy_principles.c": "Adequate, relevant, and limited to what is necessary in relation to the purposes for which they are processed ('data minimisation');",
+      "privacy_policy_principles.d": "Accurate and, where necessary, kept up to date; every reasonable step must be taken to ensure that personal data that are inaccurate, having regard to the purposes for which they are processed, are erased or rectified without delay ('accuracy');",
+      "privacy_policy_principles.e": "Kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed ('storage limitation');",
+      "privacy_policy_principles.f": "Processed in a manner that ensures appropriate security of the personal data, including protection against unauthorized or unlawful processing and against accidental loss, destruction, or damage, using appropriate technical or organizational measures ('integrity and confidentiality').",
+      
+      "privacy_policy_lawfulness_title": "Lawfulness of Processing",
+      "privacy_policy_lawfulness_intro": "To make processing compliant, we ensure it has at least one legitimate reason for processing (collecting, using, managing, or disclosing) personal data. According to Article 6(1) of EU Regulation No 2016/679 (General Data Protection Regulation or GDPR), such reasons could be:",
+      "privacy_policy_lawfulness.a": "The data subject has given consent to the processing of their personal data for one or more specific purposes;",
+      "privacy_policy_lawfulness.b": "Processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;",
+      "privacy_policy_lawfulness.c": "Processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child.",
+      
+      "privacy_policy_collection_title": "How Do We Collect Your Personal Information",
+      "privacy_policy_collection_intro": "These are the main ways we collect your information:",
+      "privacy_policy_collection.method1": "You contact us directly via our website to request information about our services.",
+      "privacy_policy_collection.method2": "You respond to our direct marketing campaigns.",
+      "privacy_policy_collection.method3": "We acquire your personal data from other sources, such as social media sites.",
+      "privacy_policy_collection.method4": "If you are under 16, please do not provide us with any of your information unless you have the permission of your parent or guardian.",
+      
+      "privacy_policy_personal_data_title": "What Personal Data May Be Collected",
+      "privacy_policy_personal_data_intro": "The following types of personal information about you may be collected:",
+      "privacy_policy_personal_data.type1": "Name,",
+      "privacy_policy_personal_data.type2": "Address,",
+      "privacy_policy_personal_data.type3": "Phone numbers,",
+      "privacy_policy_personal_data.type4": "Email address.",
+      "privacy_policy_personal_data.type5": "When you visit our website, the web servers automatically recognize your domain name and IP address. The IP address of the site that directed you to our website, operating system version, and your web browser are also disclosed as related information. Nevertheless, this information does not relate to you directly and cannot identify you personally, so it cannot be treated as personal data.",
+      
+      "privacy_policy_security_title": "How Do We Keep Personal Data Safe",
+      "privacy_policy_security_intro": "We believe that personal information must be collected and dealt with appropriately, thus there must be safeguards in place to ensure this. Although data transmission over the Internet cannot be guaranteed to be secure, we work hard to maintain physical, electronic, and procedural safeguards to protect your information in accordance with applicable data protection requirements. We use technical and organizational security measures including encryption and authentication tools to protect your personal information against manipulation, loss, destruction, and access by third parties. Our main security measures are:",
+      "privacy_policy_security.measure1": "Restricted access to your data on a 'need to know' basis;",
+      "privacy_policy_security.measure2": "Transfer of data only in encrypted form;",
+      "privacy_policy_security.measure3": "Firewalled IT systems to prohibit unauthorized access;",
+      "privacy_policy_security.measure4": "Permanently monitored access to IT systems to detect and stop any misuse.",
+      
+      "privacy_policy_rights_title": "Your Rights",
+      "privacy_policy_rights.access": "Right of Access by the Data Subject: You have the right to receive information from us regarding the processing of your personal data.",
+      "privacy_policy_rights.rectification": "Right to Rectification: You have the right to demand that we correct your personal data which are incorrect and/or incomplete.",
+      "privacy_policy_rights.erasure": "Right to Erasure: You have the right, in the event that the requirements specified in Art. 17 of the GDPR have been met, to demand the deletion of your data. Thus, in accordance with this Art. 17, for example, you may demand the deletion of your data insofar as these data are no longer required for the purposes for which they were collected. Furthermore, you may demand the deletion of these data if we process your data based upon the consent which you have granted and you then withdraw this consent.",
+      "privacy_policy_rights.restriction": "Right to Restriction of Processing: You have the right to demand the restriction of the processing of your data if the requirements specified in Art. 18 of the GDPR have been fulfilled. This is, for example, the case if you dispute the correctness of your data. For the duration of the verification of the correctness of the data, you may demand the restriction of the processing.",
+      "privacy_policy_rights.object": "Right to Object: If the processing is based upon an overriding interest or your data are used for the purposes of direct advertising, you have the right to object to the processing of your data.",
+      "privacy_policy_rights.portability": "Right to Data Portability: Insofar as the data processing is undertaken based upon a consent or the fulfillment of a contractual agreement and this is also undertaken while using an automated processing system, you have the right to receive your data in a structured, commonplace, and machine-readable format and to transfer these data to another data processing service provider.",
+      "privacy_policy_rights.revocation": "Right of Revocation: If the data processing is undertaken based upon a consent, you have the right to withdraw your consent for the data processing, with effectiveness for the future, at any time and upon a free-of-charge basis, by using the following address: info@cyborg-it.de.",
+      "privacy_policy_rights.complain": "Right to Complain: You also have the right to complain to a government supervisory authority regarding our processing of your data.",
+      
+      "privacy_policy_international_transfers_title": "International Transfers",
+      "privacy_policy_international_transfers_intro": "Cyborg has offices in many countries. You consent that, if necessary, the processing of your Personal Data could be held on a server located in a country different from your country of residence. These countries may have data protection laws that are different from the laws of your country.\n\nHowever, we have taken all appropriate safeguards to guarantee that your Personal Data will remain protected in accordance with this Privacy Policy, including using the European Commission’s Standard Contractual Clauses for transfers of Personal Data between group companies, which requires all such companies to protect Personal Data using an equivalent standard to the one required by European Union data protection law."
+    },
+    
+    "terms_conditions_title": "Terms of Use",
+    "terms_intro": "HELLO!\n\nPLEASE CAREFULLY READ THIS TERMS OF USE AGREEMENT (“TERMS”) BETWEEN YOU AND CYBORG LLC (“CYBORG”). THIS DOCUMENT WAS CREATED TO REGULATE YOUR USE OF THIS WEBSITE. BY USING THIS WEBSITE, YOU AGREE TO COMPLY WITH THESE TERMS. YOU MUST NOT USE THIS WEBSITE IF YOU HAVE ANY OBJECTION TO ANY OF THESE TERMS AND CONDITIONS.",
+    
+    "terms": {
+      "general_terms_title": "General Terms",
+      "general_terms.1": "The website is owned by Cyborg and is intended to provide information about Cyborg’s products and services.",
+      "general_terms.2": "These Terms apply to all visitors and users of the website. The website is intended for users who are at least 18 years old. Users under 18 are permitted to use the website only under the supervision of parents or legal guardians.",
+      "general_terms.3": "All visitors and users fully assume all risks associated with any damage to hardware and/or software used to access the website.",
+      "general_terms.4": "Cyborg strives to provide continuous 24/7 access to the website but does not guarantee it. Access to the website is free of charge. Users are responsible for ensuring they have the technical means to access the website and for paying any telecommunications network fees.",
+      
+      "restrictions_title": "Restrictions",
+      "restrictions_content": "You are specifically restricted from using this website in any way that is or may be damaging to this website, using this website contrary to applicable laws and regulations, or in any way that may cause harm to the website, or to any person or business entity.",
+      
+      "intellectual_property_title": "Intellectual Property",
+      "intellectual_property_content": "All materials on this site, including text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, are the property of Cyborg and are protected by applicable copyright and trademark laws.\n\nYou are granted a limited license only, subject to the restrictions provided in these Terms and Conditions, for purposes of viewing the material contained on this website. You must not republish material from this website (including republication on another website), or reproduce or store material from this website in any public or private electronic retrieval system; you must not reproduce, duplicate, copy, sell, re-sell, visit, or otherwise exploit our website or materials on our website for a commercial purpose, without our express written consent. Elements of the website are protected by trade dress, trade secret, and other laws, and may not be copied or imitated in whole or in part. All custom graphics, icons, and other items that appear on the website are trademarks, service marks, or trade dress of Cyborg, its affiliates, or other entities that have granted Cyborg the right and license to use such marks and may not be used or interfered with in any manner without the express written consent of Cyborg.\n\nAny other use or modification of the content and materials on the website without prior written permission from Cyborg is prohibited.",
+      
+      "links_title": "Links to Third-Party Sites",
+      "links_content": "On this website, Cyborg provides links to third-party resources. However, we do not control the materials or content accessible through these links. You use these sites and their content at your own risk. We recommend taking precautions to protect yourself from viruses, worms, Trojans, and other harmful software that may be present on external sites.",
+      
+      "privacy_policy_title": "Privacy Policy",
+      "privacy_policy_content": "We value your privacy. All personal data collected through this site will be used in accordance with our Privacy Policy.",
+      
+      "limitations_liability_title": "Limitation of Liability",
+      "limitations_liability_content": "WE ARE NOT RESPONSIBLE FOR ANY DIRECT OR INDIRECT DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THIS WEBSITE. IF YOU ARE DISSATISFIED WITH THE SITE OR ITS MATERIALS, YOUR SOLE REMEDY IS TO DISCONTINUE YOUR USE OF THE WEBSITE.",
+      
+      "disclaimer_title": "Disclaimer",
+      "disclaimer_content": "We are not responsible for any errors or omissions on this site. The website is provided “as is” without any warranties, and we do not guarantee its uninterrupted or error-free access.",
+      
+      "governing_law_title": "Governing Law and Jurisdiction",
+      "governing_law_content": "These Terms of Use are governed by the laws of the United States, with exclusive jurisdiction granted to the courts of the United States.",
+      
+      "severability_title": "Severability",
+      "severability_content": "If any term, provision, or wording in these Terms of Use is found to be invalid, illegal, or unenforceable for any reason, such finding shall not affect any other terms, provisions, or wording in these Terms of Use.",
+      
+      "contact_us_title": "Contact Us",
+      "contact_us_content": "If you have any questions or comments regarding these Terms of Use, please contact us at info@cyborg-it.de.\n\nWe may update the Terms occasionally, with changes taking effect immediately upon posting unless stated otherwise. We recommend reviewing the Terms periodically for any updates. If you do not agree with the Terms, please stop using the website immediately.\n\nThank you for your attention and for using our website!",
+      
+      "updated_date": "Last updated: November 11, 2024"
+    },
+    "contact": {
+      "success_message": "Thank you for your message! We will get back to you shortly.",
+      "error_message": "Oops, something went wrong! Please try again later.",
+      "sending": "Sending...",
+      "name_placeholder": "Name",
+      "email_placeholder": "E-Mai",
+      "message_placeholder": "Message",
+         "send_button": "Send Message"
+    },
+    "cookieConsent": {
+      "message": "We use cookies to enhance your experience. By continuing, you accept our use of cookies.",
+      "button": "I accept",
+      "learnMore": "Learn More"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy"
+    }
+  
+  }
+  
