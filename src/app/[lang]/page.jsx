@@ -1,3 +1,5 @@
+import Home from '../../pages/Home';
+
 export default function HomePage() {
-    return <h1>Cyborg Home (Temporary)</h1>
-  }
+  return <Home />;
+}

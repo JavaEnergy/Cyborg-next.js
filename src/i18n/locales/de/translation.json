@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "aboutUs": "Über uns",
+    "itConsulting": "IT-Beratung",
+    "webDevelopment": "Web-Entwicklung",
+    "zohoConsulting": "Zoho-Beratung",
+    "contactUs": "Kontakt"
+  },
+  "footer": {
+    "company": "Unternehmen",
+    "aboutUs": "Über uns",
+    "contactUs": "Kontakt",
+    "legal": "Rechtliches",
+    "services": "Dienstleistungen",
+    "itConsulting": "IT-Beratung",
+    "webDevelopment": "Web-Entwicklung",
+    "zohoConsulting": "Zoho-Beratung",
+    "contactInfo": "Kontaktinformationen",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "cookieConsent": {
+    "message": "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern.",
+    "button": "Verstanden",
+    "learnMore": "Mehr erfahren"
+  }
+} 
