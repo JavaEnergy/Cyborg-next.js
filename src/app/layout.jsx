@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { logEvent } from '@/firebase';
 import { reportWebVitals } from '@/utils/web-vitals';
 import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
 import './globals.css';
 import './i18n';
 
@@ -16,7 +15,6 @@ export default function RootLayout({ children }) {
   const pathname = usePathname();
   const { i18n } = useTranslation();
   const headerRef = useRef(null);
-  const footerRef = useRef(null);
   
   // Update language from path
   useEffect(() => {
@@ -60,7 +58,7 @@ export default function RootLayout({ children }) {
         <main className="main-content">
           {children}
         </main>
-        <Footer ref={footerRef} />
+        {/* Footer is now only in [lang]/layout.js */}
       </body>
     </html>
   );

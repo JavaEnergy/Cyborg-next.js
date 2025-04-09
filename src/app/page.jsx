@@ -8,6 +8,8 @@ import { motion } from 'framer-motion';
 import AccordionComponent from '@/components/AccordionComponent/AccordionComponent';
 import ContactForm from '@/components/ContactForm/ContactForm';
 import { Modal, Box, Typography, Button } from '@mui/material';
+import { useRouter } from 'next/navigation';
+import i18n from '@/i18n';
 
 // Images - Using paths from public directory instead of imports
 const BG_IMAGE = '/assets/images/bg.webp';
@@ -37,6 +39,24 @@ const Home = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const [openProjectModal, setOpenProjectModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(true);
+  const router = useRouter();
+
+  // Redirect to language-specific page
+  useEffect(() => {
+    const userLanguage = i18n.language;
+    // Determine preferred language - default to 'en' if not found
+    const preferredLanguage = userLanguage?.startsWith('de') ? 'de' : 'en';
+    
+    // Check if we're already on a language path
+    const path = window.location.pathname;
+    if (path === '/' || path === '') {
+      // Redirect to language specific page
+      router.replace(`/${preferredLanguage}`);
+    } else {
+      setIsRedirecting(false);
+    }
+  }, [router, i18n.language]);
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
@@ -101,6 +121,23 @@ const Home = () => {
     description: t('home.project_2_more_info'),
     images: [PROJECT2_IMG6, PROJECT2_IMG2, PROJECT2_IMG1, PROJECT2_IMG5, PROJECT2_IMG3, PROJECT2_IMG4],
   };
+
+  // Show loading state while redirecting
+  if (isRedirecting) {
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh',
+        fontSize: '1.5rem',
+        fontFamily: 'system-ui, sans-serif',
+        opacity: 0.7
+      }}>
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <main className="home-page">

@@ -10,15 +10,19 @@ import { reportWebVitals } from '../../firebase/reportWebVitals';
 import '../../i18n';
 
 export default function LangLayout({ children, params }) {
-  const { lang } = params;
   const { t, i18n } = useTranslation();
 
-  // Update language from path
+  // Update language from path - handle params safely in effect
   useEffect(() => {
-    if (i18n.language !== lang) {
-      i18n.changeLanguage(lang);
+    const currentLang = i18n.language;
+    const routeLang = params?.lang;
+    
+    // Only change language if routeLang is valid and different from current
+    if (routeLang && currentLang !== routeLang && (routeLang === 'en' || routeLang === 'de')) {
+      console.log(`Changing language from ${currentLang} to ${routeLang}`);
+      i18n.changeLanguage(routeLang);
     }
-  }, [lang, i18n]);
+  }, [params, i18n]);
 
   // Dynamically set the lang attribute
   useEffect(() => {
@@ -46,8 +50,6 @@ export default function LangLayout({ children, params }) {
 
   return (
     <>
-      <Header className="exclude-spider" />
-      
       <main>
         {children}
       </main>
