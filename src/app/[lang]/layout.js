@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import CookieConsent from 'react-cookie-consent';
 import { logEvent } from '../../firebase';
@@ -11,18 +10,20 @@ import '../../i18n';
 
 export default function LangLayout({ children, params }) {
   const { t, i18n } = useTranslation();
+  // Unwrap params using React.use()
+  const unwrappedParams = React.use(params);
+  const routeLang = unwrappedParams?.lang;
 
-  // Update language from path - handle params safely in effect
+  // Update language from path - now using unwrapped params
   useEffect(() => {
     const currentLang = i18n.language;
-    const routeLang = params?.lang;
     
     // Only change language if routeLang is valid and different from current
     if (routeLang && currentLang !== routeLang && (routeLang === 'en' || routeLang === 'de')) {
       console.log(`Changing language from ${currentLang} to ${routeLang}`);
       i18n.changeLanguage(routeLang);
     }
-  }, [params, i18n]);
+  }, [routeLang, i18n]);
 
   // Dynamically set the lang attribute
   useEffect(() => {
