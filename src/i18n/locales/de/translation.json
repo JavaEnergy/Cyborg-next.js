@@ -48,12 +48,27 @@
     "contact_message_placeholder": "Ihre Nachricht",
     "contact_submit_button": "Nachricht senden",
     "faq_title": "Häufig gestellte Fragen",
-    "faq_question_1": "Welche Dienstleistungen bieten Sie an?",
-    "faq_answer_1": "Wir bieten IT-Beratung, Webentwicklung und IT-Services an.",
-    "faq_question_2": "Wie kann ich Sie kontaktieren?",
-    "faq_answer_2": "Sie können das Kontaktformular auf dieser Seite verwenden oder uns direkt eine E-Mail senden.",
-    "faq_question_3": "Bieten Sie kundenspezifische Lösungen an?",
-    "faq_answer_3": "Ja, wir passen unsere Dienstleistungen an Ihre spezifischen Bedürfnisse an.",
+    "faq_question_1": "Wie lange dauert ein typisches Projekt?",
+    "faq_answer_1": "Die Projektlaufzeit hängt von der Komplexität ab. Sobald wir Ihre Anforderungen verstanden haben, erstellen wir Ihnen einen detaillierten Zeitplan.",
+  
+    "faq_question_2": "Wie managen Sie Projektänderungen oder unerwartete Anforderungen?",
+    "faq_answer_2": "Wir sind sehr flexibel. Wenn sich Ihre Wünsche ändern, passen wir unseren Projektplan an. Dazu gehören sowohl neue Anforderungen an den Funktionsumfang als auch Anpassungen an Zeitplan oder Budget. Wir besprechen alle Änderungen transparent mit Ihnen.",
+  
+    "faq_question_3": "Wie gewährleisten Sie Datensicherheit und -schutz?",
+    "faq_answer_3": "Datensicherheit nehmen wir sehr ernst. Wir nutzen fortschrittliche Sicherheitsmaßnahmen, regelmäßige Backups und verschlüsselte Übertragungswege, um Ihre Daten zu schützen. Auf Wunsch beraten wir Sie gerne zusätzlich zu Themen wie DSGVO und Hosting-Standort.",
+  
+    "faq_question_4": "Wie oft erhalte ich Updates zu meinem Projekt?",
+    "faq_answer_4": "Wir halten Sie regelmäßig auf dem Laufenden – je nach Projektgröße zum Beispiel durch wöchentliche Meetings oder E-Mail-Updates. So haben Sie immer den Überblick über Fortschritt und nächste Schritte.",
+  
+    "faq_question_5": "Fallen zusätzliche Gebühren und Steuern an, und warum wird keine Mehrwertsteuer berechnet?",
+    "faq_answer_5": "Nein, der von uns genannte Preis ist Ihr Endpreis. Wir sind in Georgien ansässig und unterliegen nicht der EU Umsatzsteuer (Mehrwertsteuer).\n\nKurz gesagt:\n- Privatkunden (B2C) in Deutschland, Österreich oder der Schweiz zahlen keine weiteren Steuern oder Gebühren.\n- Geschäftskunden (B2B) in D-A-CH wenden das Reverse-Charge-Verfahren an. Dabei meldet Ihr Unternehmen die Umsatzsteuer selbst an das jeweilige Finanzamt.\n\nAusführlich:\n- Unsere Leistungen werden in Georgien erbracht, daher fällt für Kunden in D-A-CH keine Mehrwertsteuer an. Wir zahlen unsere Steuern nach den Vorgaben des georgischen Rechts.\n- Für Geschäftskunden (B2B) in Deutschland, Österreich und der Schweiz greift das Reverse-Charge-Verfahren: Sie als Leistungsempfänger berechnen die Umsatzsteuer selbst und führen sie an Ihr zuständiges Finanzamt ab. Gleichzeitig können Sie diese meist als Vorsteuer geltend machen, sodass in der Regel keine tatsächliche Steuerlast entsteht.\n\nFalls Sie weitere Fragen haben, sprechen Sie uns gern direkt an."
+  
+    ,"faq_question_6": "Bieten Sie Wartungs- und Supportleistungen nach Projektabschluss an?",
+    "faq_answer_6": "Ja, wir bieten laufende Wartungs- und Supportleistungen an, um sicherzustellen, dass Ihre Systeme reibungslos funktionieren. Dazu gehören Fehlerbehebungen, Sicherheitsupdates und auf Wunsch regelmäßige Optimierungen.",
+  
+    "faq_question_7": "Wie kann ich Sie erreichen?",
+    "faq_answer_7": "Sie können uns per E-Mail an info@cyborg-it.de, per WhatsApp unter +995 597 01 13 09 oder über das Formular auf unserer Kontaktseite erreichen. Falls Sie weitere Fragen oder Sonderwünsche haben, melden Sie sich jederzeit – wir helfen Ihnen gerne weiter."
+  ,"faq_contact_btn": "Jetzt kontaktieren",
     "project_2_more_info": "Bookly, entwickelt von 'Cyborg', ist eine funktionsreiche Flutter-Mobile-App, die es Benutzern ermöglicht, sich sicher zu registrieren und anzumelden, Passwörter zu verwalten, durch verschiedene Buchkategorien zu stöbern und zu suchen, Bücher basierend auf Präferenzen zu filtern, Bücher zu Wunschlisten hinzuzufügen, sichere Kreditkartenzahlungen durchzuführen, Lieferadressen zu speichern, Bestellungen aufzugeben und zu verfolgen, häufig gestellte Fragen zu finden und sich für Newsletter anzumelden."    
   },
   "footer": {

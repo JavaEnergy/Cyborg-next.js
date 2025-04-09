@@ -33,14 +33,21 @@ const PROJECT2_IMG6 = '/assets/images/project/6.png';
 
 import './Home.css';
 
-const Home = () => {
+const Home = ({ language }) => {
   const { t, i18n } = useTranslation();
+  const router = useRouter();
   const [hovered, setHovered] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const [openProjectModal, setOpenProjectModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(true);
-  const router = useRouter();
+
+  // If language prop is provided, use it to set language
+  useEffect(() => {
+    if (language && (language === 'en' || language === 'de')) {
+      i18n.changeLanguage(language);
+    }
+  }, [language, i18n]);
 
   // Redirect to language-specific page
   useEffect(() => {
@@ -86,7 +93,7 @@ const Home = () => {
   };
 
   const currentLang = i18n.language;
-  const isGerman = currentLang === 'de';
+  const isGerman = currentLang.startsWith('de');
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -368,18 +375,18 @@ const Home = () => {
 
       {/* FAQ Section */}
       <motion.section
-        className="about-faq-section exclude-spider"
-        variants={sectionVariants}
+        className="faq-section"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        custom={2}
+        variants={sectionVariants}
+        custom={4}
       >
         <h2>{t('about_us.faq_title')}</h2>
-        <div className="about-faq-list">
+        <div className="faq-list">
           {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
             <div
-              className={`about-faq-item ${openFaqIndex === index ? 'open' : ''}`}
+              className={`faq-item ${openFaqIndex === index ? 'open' : ''}`}
               key={index}
             >
               <h3
@@ -395,7 +402,7 @@ const Home = () => {
                   {openFaqIndex === index ? '−' : '+'}
                 </span>
               </h3>
-              <motion.p
+              <motion.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={
                   openFaqIndex === index
@@ -405,8 +412,15 @@ const Home = () => {
                 transition={{ duration: 0.3 }}
                 className="faq-answer"
               >
-                {t(`about_us.faq_answer_${item}`)}
-              </motion.p>
+                <p>{t(`about_us.faq_answer_${item}`)}</p>
+                {item === 7 && (
+                  <Link href={`/${currentLang}/contact`}>
+                    <Button variant="contained" color="primary" className="faq-contact-btn">
+                      {t('about_us.faq_contact_btn')}
+                    </Button>
+                  </Link>
+                )}
+              </motion.div>
             </div>
           ))}
         </div>

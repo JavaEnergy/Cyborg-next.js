@@ -58,13 +58,27 @@
     "contact_message_placeholder": "Your Message",
     "contact_submit_button": "Send Message",
     "faq_title": "Frequently Asked Questions",
-    "faq_question_1": "What services do you offer?",
-    "faq_answer_1": "We offer IT consulting, web development, and IT services.",
-    "faq_question_2": "How can I contact you?",
-    "faq_answer_2": "You can use the contact form on this page or email us directly.",
-    "faq_question_3": "Do you offer custom solutions?",
-    "faq_answer_3": "Yes, we tailor our services to your specific needs.",
-    "page_title": "Home - Cyborg IT Technology",
+    "faq_question_1": "How long does a typical project take?",
+    "faq_answer_1": "The project duration depends on its complexity. Once we understand your requirements, we will provide a detailed schedule.",
+
+    "faq_question_2": "How do you handle project changes or unexpected requirements?",
+    "faq_answer_2": "We are flexible. If your project needs change, we will adjust our plans accordingly.",
+
+    "faq_question_3": "How do you ensure data security and privacy?",
+    "faq_answer_3": "We take data security very seriously. We use advanced security measures to protect your information.",
+
+    "faq_question_4": "How often do I get updates on my project?",
+    "faq_answer_4": "We keep you updated regularly, either through weekly meetings or email updates.",
+
+    "faq_question_5": "Are there any additional fees or taxes, and why is no VAT charged?",
+  "faq_answer_5": "No, the price we quote is your final price. We are based in Georgia and are not subject to EU VAT (value-added tax).\n\nIn summary:\n- Private customers (B2C) in Germany, Austria, or Switzerland pay no additional taxes or fees.\n- Business customers (B2B) in D-A-CH apply the reverse-charge mechanism. This means that your company reports the VAT directly to the respective tax office.\n\nIn detail:\n- Our services are provided in Georgia, so no VAT is applicable for customers in D-A-CH. We pay our taxes in accordance with Georgian law.\n- For business customers (B2B) in Germany, Austria, and Switzerland, the reverse-charge mechanism typically applies: You, as the recipient of the service, calculate the VAT yourself and remit it to the respective tax office. At the same time, you can usually claim it back as input tax, resulting in no actual tax burden.\n\nIf you have any further questions, please feel free to contact us directly."
+
+    ,"faq_question_6": "Do you offer maintenance and support after project completion?",
+    "faq_answer_6": "Yes, we offer ongoing maintenance and support to ensure your systems continue to run smoothly.",
+
+    "faq_question_7": "How can I reach you?",
+    "faq_answer_7": "You can reach us by email at info@cyborg-it.de, via WhatsApp at +995 597 01 03 09, or using the contact form on our website."
+,   "page_title": "Home - Cyborg IT Technology",
     "page_description": "Welcome to Cyborg IT Technology. We provide top-notch IT consulting and development services.",
     "project_2_more_info": "Bookly, developed by Cyborg, is a feature-rich Flutter mobile app that allows users to securely register and log in, manage their passwords, browse and search through various book categories, filter books based on preferences, add books to their wish lists, make secure credit card payments, store delivery addresses, place and track orders, access frequently asked questions, and subscribe to newsletters."  ,
     "close": "Close"
