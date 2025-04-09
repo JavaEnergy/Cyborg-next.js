@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { logEvent } from '@/firebase';
 import { reportWebVitals } from '@/utils/web-vitals';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 import './globals.css';
 import './i18n';
 
@@ -13,6 +15,8 @@ import './i18n';
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const { i18n } = useTranslation();
+  const headerRef = useRef(null);
+  const footerRef = useRef(null);
   
   // Update language from path
   useEffect(() => {
@@ -52,7 +56,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang={i18n.language}>
       <body>
-        {children}
+        <Header ref={headerRef} />
+        <main className="main-content">
+          {children}
+        </main>
+        <Footer ref={footerRef} />
       </body>
     </html>
   );
