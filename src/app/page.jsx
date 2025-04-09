@@ -10,6 +10,7 @@ import ContactForm from '@/components/ContactForm/ContactForm';
 import { Modal, Box, Typography, Button } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import i18n from '@/i18n';
+import OptimizedImageCaseInsensitive from '@/components/OptimizedImageCaseInsensitive';
 
 // Images - Using paths from public directory instead of imports
 const BG_IMAGE = '/assets/images/bg.webp';
@@ -170,7 +171,7 @@ const Home = ({ language }) => {
           variants={sectionVariants}
           custom={1}
         >
-          <Image
+          <OptimizedImageCaseInsensitive
             src={BG_IMAGE}
             alt={t('home.image_alt')}
             width={1200}
@@ -209,7 +210,7 @@ const Home = ({ language }) => {
         <h2>{t('home.services_title')}</h2>
         <div className="services-list">
           <Link href={`/${currentLang}/it-consulting`} className="service-item">
-            <Image
+            <OptimizedImageCaseInsensitive
               src={IT_CONSULTING_ICON}
               alt={t('home.service_it_consulting_alt')}
               width={80}
@@ -220,7 +221,7 @@ const Home = ({ language }) => {
           </Link>
 
           <Link href={`/${currentLang}/web-development`} className="service-item">
-            <Image
+            <OptimizedImageCaseInsensitive
               src={WEB_DEV_ICON}
               alt={t('home.service_web_development_alt')}
               width={80}
@@ -231,7 +232,7 @@ const Home = ({ language }) => {
           </Link>
 
           <Link href={`/${currentLang}/zoho-consulting`} className="service-item">
-            <Image
+            <OptimizedImageCaseInsensitive
               id="zoho"
               src={ZOHO_ICON}
               alt={t('home.service_it_services_alt')}
@@ -350,7 +351,7 @@ const Home = ({ language }) => {
           {project2MoreInfo.images && project2MoreInfo.images.length > 0 && (
             <Box className="project-modal-images">
               {project2MoreInfo.images.map((img, idx) => (
-                <Image
+                <OptimizedImageCaseInsensitive
                   key={idx}
                   src={img}
                   alt={`${project2MoreInfo.title} detail ${idx + 1}`}

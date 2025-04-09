@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
+import OptimizedImageCaseInsensitive from '../OptimizedImageCaseInsensitive';
 
 // Import icons from MUI
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -214,7 +215,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
                 onClick={() => changeLanguage('de')}
                 aria-label="German Language"
               >
-                <Image
+                <OptimizedImageCaseInsensitive
                   src={logode}
                   alt="German flag for language selection"
                   width={50}
@@ -226,7 +227,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
                 onClick={() => changeLanguage('en')}
                 aria-label="English Language"
               >
-                <Image
+                <OptimizedImageCaseInsensitive
                   src={logouk}
                   alt="English flag for language selection"
                   width={50}
@@ -255,7 +256,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
             onClick={goToHome}
             style={{ cursor: 'pointer' }}
           >
-            <Image
+            <OptimizedImageCaseInsensitive
               src={isScrolled ? logoDark : logo}
               alt="Cyborg Automation logo"
               width={250}
@@ -563,7 +564,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
                   onClick={() => changeLanguage('de')}
                   aria-label="German Language"
                 >
-                  <Image
+                  <OptimizedImageCaseInsensitive
                     src={logode}
                     alt="German flag for language selection"
                     width={50}
@@ -575,7 +576,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
                   onClick={() => changeLanguage('en')}
                   aria-label="English Language"
                 >
-                  <Image
+                  <OptimizedImageCaseInsensitive
                     src={logouk}
                     alt="English flag for language selection"
                     width={50}

@@ -5,6 +5,7 @@ import { Modal, Box, Button } from '@mui/material';
 import Image from 'next/image';
 import './AccordionComponent.css';
 import PropTypes from 'prop-types';
+import OptimizedImageCaseInsensitive from '../OptimizedImageCaseInsensitive';
 
 const AccordionComponent = ({ items }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -29,7 +30,7 @@ const AccordionComponent = ({ items }) => {
             onClick={() => handleOpenModal(item)}
             className="accordion-item"
           >
-            <Image
+            <OptimizedImageCaseInsensitive
               src={item.img}
               alt={item.alt}
               fill
@@ -50,7 +51,7 @@ const AccordionComponent = ({ items }) => {
         <Box className="accordion-modal-box">
           {selectedItem && (
             <>
-              <Image
+              <OptimizedImageCaseInsensitive
                 src={selectedItem.img}
                 alt={selectedItem.alt}
                 width={800}
