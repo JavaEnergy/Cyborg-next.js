@@ -2,10 +2,8 @@
 
 import React, { useState } from 'react';
 import { Modal, Box, Button } from '@mui/material';
-import Image from 'next/image';
 import './AccordionComponent.css';
 import PropTypes from 'prop-types';
-import OptimizedImageCaseInsensitive from '../OptimizedImageCaseInsensitive';
 
 const AccordionComponent = ({ items }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -30,17 +28,10 @@ const AccordionComponent = ({ items }) => {
             onClick={() => handleOpenModal(item)}
             className="accordion-item"
           >
-            <OptimizedImageCaseInsensitive
+            <img 
               src={item.img}
               alt={item.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              style={{ 
-                objectFit: 'cover',
-                objectPosition: 'center'
-              }}
-              quality={95}
-              priority={true}
+              loading="lazy"
             />
           </li>
         ))}
@@ -55,19 +46,11 @@ const AccordionComponent = ({ items }) => {
         <Box className="accordion-modal-box">
           {selectedItem && (
             <>
-              <OptimizedImageCaseInsensitive
+              <img
                 src={selectedItem.img}
                 alt={selectedItem.alt}
-                width={800}
-                height={600}
                 className="accordion-full-image"
-                quality={95}
-                style={{ 
-                  maxHeight: '70vh', 
-                  maxWidth: '100%',
-                  width: 'auto',
-                  objectFit: 'contain'
-                }}
+                loading="lazy"
               />
               <Button
                 variant="contained"

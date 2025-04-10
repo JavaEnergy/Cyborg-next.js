@@ -2,12 +2,11 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 320px;
-  gap: 8px;
+  height: 400px;
+  gap: 16px;
   transition: 0.3s;
   list-style: none;
   padding: 0;
-  margin: 20px 0;
 }
 
 .accordion:hover {
@@ -17,37 +16,34 @@
 .accordion li {
   position: relative;
   overflow: hidden;
-  flex: 1;
-  border-radius: 8px;
-  opacity: 0.9;
+  flex: 0 0 80px;
+  border-radius: 50px;
+  opacity: 0.75;
   cursor: pointer;
   transition: flex 0.3s, transform 0.3s, opacity 0.3s;
-  min-width: 100px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  background-color: white;
 }
 
 .accordion li img {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  filter: none;
-  transition: transform 0.3s ease;
+  filter: grayscale(0.5);
+  transition: filter 0.3s;
 }
 
 .accordion li:hover {
-  flex: 2;
-  transform: scale(1.05);
+  flex: 0 1 260px;
+  transform: scale(1.1);
   z-index: 10;
   opacity: 1;
 }
 
 .accordion li:hover img {
-  transform: scale(1.1);
+  filter: grayscale(0);
 }
 
 .accordion li .content {
@@ -97,30 +93,25 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
-  padding: 24px;
+  padding: 0 24px 10px;
   border-radius: 8px;
   outline: none;
-  width: 90%;
-  max-width: 90vw;
-  max-height: 90vh;
-  overflow: hidden;
+  max-width: 800px; /* Increased max-width for larger images */
+  max-height: 80vh;
+  overflow-y: auto;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .accordion-full-image {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 80vh;
-  margin: 0;
+  width: auto; /* Remove width: 100% to maintain natural size */
+  max-width: 100%; /* Ensure image doesn't exceed container's width */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 16px;
   border-radius: 4px;
-  object-fit: contain;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  object-fit: contain; /* Prevent image distortion */
 }
 
 /* Responsive adjustments */
