@@ -2,11 +2,12 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 400px;
-  gap: 16px;
+  height: 320px;
+  gap: 8px;
   transition: 0.3s;
   list-style: none;
   padding: 0;
+  margin: 20px 0;
 }
 
 .accordion:hover {
@@ -16,34 +17,37 @@
 .accordion li {
   position: relative;
   overflow: hidden;
-  flex: 0 0 80px;
-  border-radius: 50px;
-  opacity: 0.75;
+  flex: 1;
+  border-radius: 8px;
+  opacity: 0.9;
   cursor: pointer;
   transition: flex 0.3s, transform 0.3s, opacity 0.3s;
+  min-width: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-color: white;
 }
 
 .accordion li img {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.5);
-  transition: filter 0.3s;
+  object-position: center;
+  filter: none;
+  transition: transform 0.3s ease;
 }
 
 .accordion li:hover {
-  flex: 0 1 260px;
-  transform: scale(1.1);
+  flex: 2;
+  transform: scale(1.05);
   z-index: 10;
   opacity: 1;
 }
 
 .accordion li:hover img {
-  filter: grayscale(0);
+  transform: scale(1.1);
 }
 
 .accordion li .content {
@@ -93,25 +97,30 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
-  padding: 0 24px 10px;
+  padding: 24px;
   border-radius: 8px;
   outline: none;
-  max-width: 800px;
-  max-height: 80vh;
-  overflow-y: auto;
+  width: 90%;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .accordion-full-image {
   width: auto;
   max-width: 100%;
   height: auto;
-  margin-top: 16px;
+  max-height: 80vh;
+  margin: 0;
   border-radius: 4px;
   object-fit: contain;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 /* Responsive adjustments */

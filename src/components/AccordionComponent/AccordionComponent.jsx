@@ -34,9 +34,13 @@ const AccordionComponent = ({ items }) => {
               src={item.img}
               alt={item.alt}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ objectFit: 'cover' }}
-              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 33vw"
+              style={{ 
+                objectFit: 'cover',
+                objectPosition: 'center'
+              }}
+              quality={95}
+              priority={true}
             />
           </li>
         ))}
@@ -57,7 +61,13 @@ const AccordionComponent = ({ items }) => {
                 width={800}
                 height={600}
                 className="accordion-full-image"
-                loading="lazy"
+                quality={95}
+                style={{ 
+                  maxHeight: '70vh', 
+                  maxWidth: '100%',
+                  width: 'auto',
+                  objectFit: 'contain'
+                }}
               />
               <Button
                 variant="contained"

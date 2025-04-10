@@ -178,6 +178,10 @@
   cursor: default;
 }
 
+/* Desktop Layout:
+   - First project: full width on the first row
+   - Second and third projects: two columns on the next row
+*/
 .project-item:first-child {
   flex: 1 1 100%;
 }
@@ -214,6 +218,19 @@
 
 .project-content button:hover {
   background-color: #b89242;
+}
+
+/* Ensure accordion has proper sizing within project box */
+.project-item .accordion {
+  width: 100%;
+  margin: 15px auto;
+}
+
+.project-item .accordion-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #f5f5f5;
 }
 
 /* Modal Styles */
@@ -556,4 +573,54 @@
   .project-content {
     overflow: hidden;
   }
+}
+
+/* Add specific styling for the Bookly project */
+.project-2 {
+  padding: 30px !important;
+}
+
+.project-2 .accordion {
+  height: 180px; /* Reduced height for better fit */
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.project-2 .accordion li {
+  position: relative;
+  height: 100%;
+  min-width: 120px;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-2 .accordion li:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .project-2 .accordion {
+    height: 420px;
+    flex-direction: column; /* Stack vertically on mobile */
+  }
+}
+
+/* Improved layout for accordion in projects */
+.project-item .accordion {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.project-item .accordion-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #f5f5f5;
 } 
