@@ -100,17 +100,3 @@ body {
 footer {
   flex-shrink: 0;
 }
-
-/* Fallback styles for missing images */
-.logo-container::before {
-  content: "Cyborg IT";
-  display: block;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.header.scrolled .logo-container::before {
-  color: white;
-} 

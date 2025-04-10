@@ -9,6 +9,7 @@ const OptimizedImageCaseInsensitive = ({
   height, 
   className = '',
   priority = false,
+  fill,
   ...props 
 }) => {
   const [imageSrc, setImageSrc] = useState(src);
@@ -64,18 +65,25 @@ const OptimizedImageCaseInsensitive = ({
     }
   };
 
-  return (
-    <Image
-      src={normalizedSrc}
-      alt={alt || "Image"}
-      width={width || 500}
-      height={height || 300}
-      className={className}
-      priority={priority}
-      onError={handleError}
-      {...props}
-    />
-  );
+  // Prepare image properties based on whether fill is specified
+  const imageProps = {
+    src: normalizedSrc,
+    alt: alt || "Image",
+    className,
+    priority,
+    onError: handleError,
+    ...props
+  };
+
+  // Add width/height only if fill is not present
+  if (fill) {
+    imageProps.fill = fill;
+  } else {
+    imageProps.width = width || 500;
+    imageProps.height = height || 300;
+  }
+
+  return <Image {...imageProps} />;
 };
 
 export default OptimizedImageCaseInsensitive; 
