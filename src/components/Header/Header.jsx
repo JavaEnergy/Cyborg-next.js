@@ -125,7 +125,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
   const topBarMessage = useMemo(() => {
     // During server-side rendering or before client hydration, use a consistent value 
     // to avoid hydration mismatch
-    if (!hasMounted) {
+    if (typeof window === 'undefined') {
       return isGerman 
         ? 'Wir sind 24/7 für Sie da!' 
         : 'We are available 24/7!';
@@ -137,7 +137,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
     } else {
       return isSmallScreen ? 'Available 24/7!' : 'We are available 24/7!';
     }
-  }, [isGerman, isSmallScreen, hasMounted]);
+  }, [isGerman, isSmallScreen]);
 
   // Custom HashLink component for Next.js
   const HashLink = ({ children, to, className, onClick }) => {

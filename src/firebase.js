@@ -9,7 +9,7 @@ const firebaseConfig = {
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID?.replace(':', ''), // Remove leading colon if present
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
@@ -20,15 +20,23 @@ let performance;
 
 // Only initialize Firebase on the client side
 if (typeof window !== 'undefined') {
-  app = initializeApp(firebaseConfig);
-  analytics = getAnalytics(app);
-  performance = getPerformance(app);
+  try {
+    app = initializeApp(firebaseConfig);
+    analytics = getAnalytics(app);
+    performance = getPerformance(app);
+  } catch (error) {
+    console.error('Firebase initialization error:', error);
+  }
 }
 
 // Function to log events
 const logEvent = (eventName, eventParams) => {
   if (typeof window !== 'undefined' && analytics) {
-    firebaseLogEvent(analytics, eventName, eventParams);
+    try {
+      firebaseLogEvent(analytics, eventName, eventParams);
+    } catch (error) {
+      console.error('Firebase analytics error:', error);
+    }
   }
 };
 

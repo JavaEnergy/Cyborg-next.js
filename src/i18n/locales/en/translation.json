@@ -6,8 +6,6 @@
     "it_services": "IT Services",
     "contact_us": "Contact",
     "zoho_consulting": "ZOHO Software"
-
-
   },
   "footer_copyright": "All rights reserved.",
   "common": {
@@ -71,17 +69,21 @@
     "faq_answer_4": "We keep you updated regularly, either through weekly meetings or email updates.",
 
     "faq_question_5": "Are there any additional fees or taxes, and why is no VAT charged?",
-  "faq_answer_5": "No, the price we quote is your final price. We are based in Georgia and are not subject to EU VAT (value-added tax).\n\nIn summary:\n- Private customers (B2C) in Germany, Austria, or Switzerland pay no additional taxes or fees.\n- Business customers (B2B) in D-A-CH apply the reverse-charge mechanism. This means that your company reports the VAT directly to the respective tax office.\n\nIn detail:\n- Our services are provided in Georgia, so no VAT is applicable for customers in D-A-CH. We pay our taxes in accordance with Georgian law.\n- For business customers (B2B) in Germany, Austria, and Switzerland, the reverse-charge mechanism typically applies: You, as the recipient of the service, calculate the VAT yourself and remit it to the respective tax office. At the same time, you can usually claim it back as input tax, resulting in no actual tax burden.\n\nIf you have any further questions, please feel free to contact us directly."
+    "faq_answer_5": "No, the price we quote is your final price. We are based in Georgia and are not subject to EU VAT (value-added tax).\n\nIn summary:\n- Private customers (B2C) in Germany, Austria, or Switzerland pay no additional taxes or fees.\n- Business customers (B2B) in D-A-CH apply the reverse-charge mechanism. This means that your company reports the VAT directly to the respective tax office.\n\nIn detail:\n- Our services are provided in Georgia, so no VAT is applicable for customers in D-A-CH. We pay our taxes in accordance with Georgian law.\n- For business customers (B2B) in Germany, Austria, and Switzerland, the reverse-charge mechanism typically applies: You, as the recipient of the service, calculate the VAT yourself and remit it to the respective tax office. At the same time, you can usually claim it back as input tax, resulting in no actual tax burden.\n\nIf you have any further questions, please feel free to contact us directly.",
 
-    ,"faq_question_6": "Do you offer maintenance and support after project completion?",
+    "faq_question_6": "Do you offer maintenance and support after project completion?",
     "faq_answer_6": "Yes, we offer ongoing maintenance and support to ensure your systems continue to run smoothly.",
 
     "faq_question_7": "How can I reach you?",
-    "faq_answer_7": "You can reach us by email at info@cyborg-it.de, via WhatsApp at +995 597 01 03 09, or using the contact form on our website."
-,   "page_title": "Home - Cyborg IT Technology",
+    "faq_answer_7": "You can reach us by email at info@cyborg-it.de, via WhatsApp at +995 597 01 03 09, or using the contact form on our website.",
+    "page_title": "Home - Cyborg IT Technology",
     "page_description": "Welcome to Cyborg IT Technology. We provide top-notch IT consulting and development services.",
-    "project_2_more_info": "Bookly, developed by Cyborg, is a feature-rich Flutter mobile app that allows users to securely register and log in, manage their passwords, browse and search through various book categories, filter books based on preferences, add books to their wish lists, make secure credit card payments, store delivery addresses, place and track orders, access frequently asked questions, and subscribe to newsletters."  ,
-    "close": "Close"
+    "project_2_more_info": "Bookly, developed by Cyborg, is a feature-rich Flutter mobile app that allows users to securely register and log in, manage their passwords, browse and search through various book categories, filter books based on preferences, add books to their wish lists, make secure credit card payments, store delivery addresses, place and track orders, access frequently asked questions, and subscribe to newsletters.",
+    "close": "Close",
+    "accordion_image_alt_1": "Project showcase image 1",
+    "accordion_image_alt_2": "Project showcase image 2",
+    "accordion_image_alt_3": "Project showcase image 3",
+    "accordion_image_alt_4": "Project showcase image 4"
 
   },
   
@@ -113,7 +115,7 @@
     "web_consulting_more_info": "Our web consulting covers platform selection, performance optimization, and security best practices. With a focus on user experience, we guide you in building modern websites that convert visitors into customers. Our experts guarantee smooth deployment and ongoing maintenance.",
     "mobile_consulting_more_info": "We specialize in building mobile apps that stand out. From native to cross-platform solutions, we focus on intuitive design, high performance, and seamless integration with your existing systems. Let us handle the technical details so you can focus on delivering value to your users.",
     "cloud_consulting_more_info": "Our cloud experts handle everything from migration planning to continuous optimization. We design architectures that are scalable, cost-effective, and secure—enabling you to innovate faster and outperform competitors. Enjoy peace of mind knowing your data is safeguarded and accessible anywhere.",
-    "it_security_audits_more_info": "Protect your organization’s reputation and sensitive data with comprehensive security audits. We identify vulnerabilities, apply best-in-class safeguards, and ensure ongoing compliance. Our certified specialists promise safer systems, minimal risk, and total peace of mind.",
+    "it_security_audits_more_info": "Protect your organization's reputation and sensitive data with comprehensive security audits. We identify vulnerabilities, apply best-in-class safeguards, and ensure ongoing compliance. Our certified specialists promise safer systems, minimal risk, and total peace of mind.",
     "close": "Close",
     "contact_us": "Contact Us",
     "ai_consulting": "AI Consulting",
@@ -151,7 +153,7 @@
     "faq_angular_title": "When to Use Angular?",
     "faq_angular_content": "Perfect for large-scale, enterprise applications where strong structure is essential.",
     "contact_us": "Contact Us",
-    "wordpress_more_info": "Leverage the world’s most popular CMS with our WordPress experts. We offer seamless theme customizations, performance optimizations, and robust security measures. Our team guarantees a worry-free setup and long-term support, ensuring your website scales with your business.",
+    "wordpress_more_info": "Leverage the world's most popular CMS with our WordPress experts. We offer seamless theme customizations, performance optimizations, and robust security measures. Our team guarantees a worry-free setup and long-term support, ensuring your website scales with your business.",
     "react_more_info": "Our React specialists build modern, efficient, and highly interactive applications. Whether you need a dynamic user interface or a scalable single-page app, we ensure top performance and maintainability. We stand by you from concept to deployment, guaranteeing a smooth, on-time implementation.",
     "angular_more_info": "Get enterprise-grade solutions backed by our Angular pros. We design complex, data-rich applications that remain user-friendly and stable at scale. From architecture planning to final rollout, we provide full support and guarantee reliable performance for every use case.",
     "ecommerce_more_info": "Empower customers to personalize and visualize products in real time with our advanced product configurators. Our team crafts intuitive user flows and seamless integrations, guaranteeing a boost in sales and overall customer satisfaction. We handle every technical detail so you can focus on growth.",
@@ -208,7 +210,7 @@
     "about_text2": "We are Cyborg, a fusion of human ingenuity and machine precision. ",
     "about_text3": "As an outsourcing company equipped with skilled professionals, our services include IT solutions, Web development, and software consulting,to empower our clients to achieve their visions. ",
     "mission_text": "Based in Georgia, we offer cost-effective solutions without additional taxes that are mandatory in EU.",
-    "mission_text2": "We speak your language, whether it’s German, or English, ensuring seamless communication, 24/7;",
+    "mission_text2": "We speak your language, whether it's German, or English, ensuring seamless communication, 24/7;",
     "mission_text3": "And we are committed to delivering excellence, every step of the way.",
     "mission_title": "Cyborg: High-Quality, Cost-Effective IT Solutions, 24/7.",
     "faq_question_1": "How long does a typical project take?",
@@ -293,7 +295,7 @@
     "title": "Privacy Policy and Terms of Use",
     
     "privacy_policy_title": "Privacy Policy",
-    "privacy_policy_aim": "DATA PROTECTION POLICY\n\nAIM OF THE DATA PROTECTION POLICY\nCyborg is fully committed to complying with applicable data protection laws, as we believe that ensuring data protection is the basis of trustworthy business relationships.\n\nWe are always working to stay compliant - encouraging audits, certifications, and providing industry-standard contractual protections.\n\nThis Data Protection Policy ensures the level of data protection prescribed by the European Union Data Protection Regulations and provides one of the necessary framework conditions for cross-border data transmission.\n\nThis Data Protection Policy applies to all companies of Cyborg, affiliated companies, and their employees and is based on globally accepted, basic principles of data protection.\n\nThe latest version of the Data Protection Policy can be accessed with the data privacy information on Cyborg’s website at: cyborg-it.de",
+    "privacy_policy_aim": "DATA PROTECTION POLICY\n\nAIM OF THE DATA PROTECTION POLICY\nCyborg is fully committed to complying with applicable data protection laws, as we believe that ensuring data protection is the basis of trustworthy business relationships.\n\nWe are always working to stay compliant - encouraging audits, certifications, and providing industry-standard contractual protections.\n\nThis Data Protection Policy ensures the level of data protection prescribed by the European Union Data Protection Regulations and provides one of the necessary framework conditions for cross-border data transmission.\n\nThis Data Protection Policy applies to all companies of Cyborg, affiliated companies, and their employees and is based on globally accepted, basic principles of data protection.\n\nThe latest version of the Data Protection Policy can be accessed with the data privacy information on Cyborg's website at: cyborg-it.de",
     
     "privacy_policy_commitment": "PRINCIPLES OF PERSONAL DATA PROCESSING\n\nWe collect and use (process) certain types of information (Personal Data) that relate to the people (Data Subjects) we interact with to carry out our business.\n\nWe are confident that when processing personal data, individual rights must be protected, which means that all personal data must be collected and processed in a legal and fair manner.\n\nTherefore, we presume and agree that Personal Data shall be:",
     
@@ -345,15 +347,15 @@
     "privacy_policy_rights.complain": "Right to Complain: You also have the right to complain to a government supervisory authority regarding our processing of your data.",
     
     "privacy_policy_international_transfers_title": "International Transfers",
-    "privacy_policy_international_transfers_intro": "Cyborg has offices in many countries. You consent that, if necessary, the processing of your Personal Data could be held on a server located in a country different from your country of residence. These countries may have data protection laws that are different from the laws of your country.\n\nHowever, we have taken all appropriate safeguards to guarantee that your Personal Data will remain protected in accordance with this Privacy Policy, including using the European Commission’s Standard Contractual Clauses for transfers of Personal Data between group companies, which requires all such companies to protect Personal Data using an equivalent standard to the one required by European Union data protection law."
+    "privacy_policy_international_transfers_intro": "Cyborg has offices in many countries. You consent that, if necessary, the processing of your Personal Data could be held on a server located in a country different from your country of residence. These countries may have data protection laws that are different from the laws of your country.\n\nHowever, we have taken all appropriate safeguards to guarantee that your Personal Data will remain protected in accordance with this Privacy Policy, including using the European Commission's Standard Contractual Clauses for transfers of Personal Data between group companies, which requires all such companies to protect Personal Data using an equivalent standard to the one required by European Union data protection law."
   },
   
   "terms_conditions_title": "Terms of Use",
-  "terms_intro": "HELLO!\n\nPLEASE CAREFULLY READ THIS TERMS OF USE AGREEMENT (“TERMS”) BETWEEN YOU AND CYBORG LLC (“CYBORG”). THIS DOCUMENT WAS CREATED TO REGULATE YOUR USE OF THIS WEBSITE. BY USING THIS WEBSITE, YOU AGREE TO COMPLY WITH THESE TERMS. YOU MUST NOT USE THIS WEBSITE IF YOU HAVE ANY OBJECTION TO ANY OF THESE TERMS AND CONDITIONS.",
+  "terms_intro": "HELLO!\n\nPLEASE CAREFULLY READ THIS TERMS OF USE AGREEMENT ("TERMS") BETWEEN YOU AND CYBORG LLC ("CYBORG"). THIS DOCUMENT WAS CREATED TO REGULATE YOUR USE OF THIS WEBSITE. BY USING THIS WEBSITE, YOU AGREE TO COMPLY WITH THESE TERMS. YOU MUST NOT USE THIS WEBSITE IF YOU HAVE ANY OBJECTION TO ANY OF THESE TERMS AND CONDITIONS.",
   
   "terms": {
     "general_terms_title": "General Terms",
-    "general_terms.1": "The website is owned by Cyborg and is intended to provide information about Cyborg’s products and services.",
+    "general_terms.1": "The website is owned by Cyborg and is intended to provide information about Cyborg's products and services.",
     "general_terms.2": "These Terms apply to all visitors and users of the website. The website is intended for users who are at least 18 years old. Users under 18 are permitted to use the website only under the supervision of parents or legal guardians.",
     "general_terms.3": "All visitors and users fully assume all risks associated with any damage to hardware and/or software used to access the website.",
     "general_terms.4": "Cyborg strives to provide continuous 24/7 access to the website but does not guarantee it. Access to the website is free of charge. Users are responsible for ensuring they have the technical means to access the website and for paying any telecommunications network fees.",
@@ -374,7 +376,7 @@
     "limitations_liability_content": "WE ARE NOT RESPONSIBLE FOR ANY DIRECT OR INDIRECT DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THIS WEBSITE. IF YOU ARE DISSATISFIED WITH THE SITE OR ITS MATERIALS, YOUR SOLE REMEDY IS TO DISCONTINUE YOUR USE OF THE WEBSITE.",
     
     "disclaimer_title": "Disclaimer",
-    "disclaimer_content": "We are not responsible for any errors or omissions on this site. The website is provided “as is” without any warranties, and we do not guarantee its uninterrupted or error-free access.",
+    "disclaimer_content": "We are not responsible for any errors or omissions on this site. The website is provided "as is" without any warranties, and we do not guarantee its uninterrupted or error-free access.",
     
     "governing_law_title": "Governing Law and Jurisdiction",
     "governing_law_content": "These Terms of Use are governed by the laws of the United States, with exclusive jurisdiction granted to the courts of the United States.",
