@@ -141,14 +141,17 @@
 nav a {
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   color: inherit;
+  font-weight: 800; /* Using 800 for extra bold */
+  font-family: 'Overpass', sans-serif;
 }
 
 nav a:hover,
 nav a.active {
   color: #D4B051;
-  font-weight: bold;
+  font-weight: 800; /* Keep extra bold on hover */
+  transform: translateY(-1px);
 }
 
 .main-menu {
@@ -188,18 +191,21 @@ nav a.active {
   display: block;
   padding: 0.5rem 1rem;
   color: #222;
+  font-weight: 700; /* Slightly lighter but still bold for submenu items */
+  transition: all 0.3s ease;
 }
 
 .submenu li a:hover {
   background-color: #f9f9f9;
   color: #D4B051;
-  font-weight: bold;
+  font-weight: 700; /* Keep consistent weight on hover */
+  transform: translateX(5px);
 }
 
 .submenu li a.active {
-  background-color: #ffffff; /* or whatever you like */
+  background-color: #ffffff;
   color: #D4B051;
-  font-weight: bold;
+  font-weight: 700; /* Keep consistent weight for active state */
 }
 
 .dropdown:hover .submenu,
