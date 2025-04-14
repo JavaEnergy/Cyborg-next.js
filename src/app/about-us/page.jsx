@@ -70,6 +70,10 @@ const AboutUs = () => {
     }),
   };
 
+  useEffect(() => {
+    window.dispatchEvent(new Event('page-loaded'));
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
@@ -86,7 +90,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* First Content Section: Image Left, Text Right */}
+      {/* First Content Section */}
       <motion.section
         className="about-content-section"
         variants={sectionVariants}
@@ -101,9 +105,9 @@ const AboutUs = () => {
               src={image1}
               alt={t('about_us.image1_alt')}
               id="firstimg"
+              loading="lazy"
               width={500}
               height={333}
-              priority
             />
           </div>
           <div className="about-text-content">
@@ -125,7 +129,7 @@ const AboutUs = () => {
         {t('about_us.mission_title')}
       </motion.h2>
 
-      {/* Second Content Section: Image Right, Text Left */}
+      {/* Second Content Section */}
       <motion.section
         className="about-content-section"
         variants={sectionVariants}
@@ -145,9 +149,9 @@ const AboutUs = () => {
               src={image2}
               alt={t('about_us.image2_alt')}
               className="circle-image"
+              loading="lazy"
               width={250}
               height={250}
-              priority
             />
           </div>
         </div>

@@ -1,7 +1,7 @@
 /* =======================================
    HERO SECTION
 ======================================= */
-.zoho-hero {
+.zoho-consulting-hero {
   position: relative;
   height: 60vh;
   display: flex;
@@ -88,7 +88,23 @@
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.zoho-service-card .card-description {
+.zoho-service-card .MuiCardMedia-root {
+  height: 180px;
+  object-fit: contain;
+}
+
+.zoho-service-card .MuiCardContent-root {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.zoho-service-card .MuiTypography-h5 {
+  font-family: 'Overpass', sans-serif;
+  margin-bottom: 10px;
+}
+
+.zoho-service-card .MuiTypography-body2 {
+  color: #555;
   flex-grow: 1;
 }
 
@@ -202,10 +218,7 @@
   background-color: #fff;
   max-width: 600px;
   width: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 100px auto;
   border-radius: 12px;
   padding: 30px;
   outline: none;
@@ -252,7 +265,8 @@
   }
 
   .cta-button {
-    width: 100%;
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 
   .modal-content {

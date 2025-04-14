@@ -1,20 +1,20 @@
 /* =======================================
    HERO SECTION
 ======================================= */
-.it-hero {
+.it-consulting-hero {
   position: relative;
   height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/assets/images/it-consulting-bg.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: white;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.it-hero::before {
+.it-consulting-hero::before {
   content: "";
   position: absolute;
   top: 0;
@@ -25,10 +25,10 @@
   z-index: 1;
 }
 
-.it-hero h1 {
+.it-consulting-hero h1 {
   position: relative;
   z-index: 2;
-  font-family: 'Overpass', sans-serif;
+  font-family: 'Overpass-black', sans-serif;
   font-size: 3.5rem;
   animation: fadeIn 2s ease-in-out;
 }
@@ -57,72 +57,188 @@
 ======================================= */
 .service-card {
   height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 8px;
-}
-
-.service-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-icon {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  color: #9c27b0;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.service-description {
-  color: #666;
-  line-height: 1.6;
+.MuiCardMedia-root {
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover .MuiCardMedia-root {
+  transform: scale(1.05);
+}
+
+.MuiCardContent-root {
+  flex-grow: 1;
+}
+
+.MuiCardContent-root h3 {
+  margin-bottom: 10px;
 }
 
 /* =======================================
    CTA SECTION
 ======================================= */
 .cta-section {
-  background-color: #f9f9f9;
+  background-color: #007BFF;
+  color: #ffffff;
   padding: 60px 20px;
+  margin-top: 60px;
+  text-align: center;
   border-radius: 8px;
+  position: relative;
+  overflow: hidden;
 }
 
-.cta-button {
-  background-color: #9c27b0 !important;
-  color: white !important;
-  transition: background-color 0.3s ease !important;
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
 }
 
-.cta-button:hover {
-  background-color: #7b1fa2 !important;
+.cta-section h5 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .cta-button {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .cta-button .MuiButton-root {
+  padding: 12px 30px;
+  font-size: 1rem;
+  background-color: #9c27b0;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-section .cta-button .MuiButton-root:hover {
+  background-color: #7b1fa2;
+  color: #ffffff;
 }
 
 /* =======================================
    RESPONSIVE DESIGN
 ======================================= */
-@media (max-width: 960px) {
-  .it-hero {
-    height: 30vh;
+@media (max-width: 768px) {
+  .consulting-section {
+    margin-top: 40px;
   }
 
-  .it-hero h1 {
+  .section-image {
+    margin-top: 20px;
+  }
+
+  .it-consulting-hero {
+    height: 50vh;
+    background-position: top;
+  }
+
+  .it-consulting-hero h1 {
     font-size: 2.5rem;
   }
 
-  .intro-section, .services-section, .cta-section {
-    margin: 40px 0;
+  .cta-section {
+    padding: 40px 15px;
+  }
+
+  .cta-button {
+    width: 100%;
   }
 }
 
-@media (max-width: 600px) {
-  .it-hero {
-    height: 25vh;
+@media (max-width: 576px) {
+  .it-consulting-hero {
+    height: 40vh;
   }
 
-  .it-hero h1 {
+  .it-consulting-hero h1 {
     font-size: 2rem;
   }
 
-  .service-card {
-    margin-bottom: 20px;
+  .section-image {
+    width: 100%;
   }
+
+  .cta-section {
+    padding: 40px 10px;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Section Image */
+.section-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-image:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Consulting Section */
+.consulting-section {
+  margin-top: 60px;
+  white-space: pre-line;
+}
+
+.consulting-section h2 {
+  margin-bottom: 20px;
+}
+
+.consulting-section p {
+  margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  max-width: 600px;
+  width: 90%;
+  margin: 100px auto;
+  border-radius: 12px;
+  padding: 30px;
+  outline: none;
+  max-height: 80vh;
+  overflow-y: auto;
 } 

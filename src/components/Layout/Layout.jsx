@@ -5,8 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header/Header';
-import './globals.css';
-import './i18n';
+import Footer from '@/components/Footer/Footer';
+import '@/app/globals.css';
+import '@/app/i18n';
+import './Layout.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,6 +16,8 @@ export default function RootLayout({ children, params }) {
   const { i18n } = useTranslation();
   const pathname = usePathname();
   const headerRef = useRef(null);
+  // Get language from URL path
+  const currentLang = pathname.split('/')[1] || 'en';
 
   useEffect(() => {
     // Get language from URL path
@@ -22,12 +26,13 @@ export default function RootLayout({ children, params }) {
   }, [pathname, i18n]);
 
   return (
-    <html lang={params.lang || 'en'}>
+    <html lang={currentLang}>
       <body className={inter.className}>
         <Header ref={headerRef} />
         <main className="main-content">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

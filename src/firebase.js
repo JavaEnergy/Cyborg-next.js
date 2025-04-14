@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent as firebaseLogEvent } from "firebase/analytics";
+import { getAnalytics, isSupported, logEvent as firebaseLogEvent } from "firebase/analytics";
 import { getPerformance } from "firebase/performance";
+import { getInstallations } from "firebase/installations";
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -9,23 +10,38 @@ const firebaseConfig = {
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID?.replace(':', ''), // Remove leading colon if present
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
-let app;
-let analytics;
-let performance;
+const app = initializeApp(firebaseConfig);
 
-// Only initialize Firebase on the client side
+// Initialize Analytics only in browser environment
+let analytics = null;
+if (typeof window !== 'undefined') {
+  isSupported().then(yes => yes && (analytics = getAnalytics(app)));
+}
+
+// Initialize Performance Monitoring
+let perf = null;
+if (typeof window !== 'undefined') {
+  perf = getPerformance(app);
+}
+
+// Initialize Installations only in browser environment
+let installations = null;
 if (typeof window !== 'undefined') {
   try {
-    app = initializeApp(firebaseConfig);
-    analytics = getAnalytics(app);
-    performance = getPerformance(app);
+    // Only initialize installations if all required config values are present
+    if (firebaseConfig.apiKey && firebaseConfig.projectId) {
+      installations = getInstallations(app);
+    } else {
+      console.warn('Firebase installations not initialized: Missing required config values');
+    }
   } catch (error) {
-    console.error('Firebase initialization error:', error);
+    console.error('Firebase installations error:', error);
+    // Don't throw the error, just log it
   }
 }
 
@@ -40,4 +56,4 @@ const logEvent = (eventName, eventParams) => {
   }
 };
 
-export { app, analytics, performance, logEvent }; 
+export { app, analytics, perf, installations, logEvent }; 

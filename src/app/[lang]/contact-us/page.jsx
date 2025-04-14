@@ -1,267 +1,276 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Container, Typography, Button, Paper, IconButton, Box, CircularProgress } from '@mui/material';
 import { motion } from 'framer-motion';
-import { 
-  Container, 
-  Typography, 
-  Grid, 
-  TextField, 
-  Button, 
-  Box, 
-  Paper,
-  Snackbar,
-  Alert
-} from '@mui/material';
-import {
-  Phone as PhoneIcon,
-  Email as EmailIcon,
-  LocationOn as LocationIcon
-} from '@mui/icons-material';
+import emailjs from '@emailjs/browser';
+import { useRouter } from 'next/navigation';
+
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import EmailIcon from '@mui/icons-material/Email';
+import SubjectIcon from '@mui/icons-material/Subject';
+import ChatIcon from '@mui/icons-material/Chat';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
+import Layout from '@/components/Layout/Layout';
+import HelmetManager from '@/components/HelmetManager/HelmetManager';
 import './ContactUs.css';
 
-const ContactUs = () => {
-  const { t } = useTranslation();
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [snackbar, setSnackbar] = useState({
-    open: false,
-    message: '',
-    severity: 'success'
-  });
+const ContactUs = ({ params }) => {
+  const { t, i18n } = useTranslation();
+  const formRef = useRef(null);
+  const router = useRouter();
 
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+  const [status, setStatus] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // Build the canonical URL explicitly using the current language
+  const canonicalUrl = `https://cyborg-it.de/${params.lang}/contact-us`;
+
+  // Animation variants for framer-motion
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  };
+
+  // Emit 'page-loaded' event after component mounts
+  useEffect(() => {
+    window.dispatchEvent(new Event('page-loaded'));
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus('');
+    setIsSuccess(false);
+
+    console.time('EmailJS Submission Time');
+
+    try {
+      const result = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+      console.log('Email successfully sent!', result.text);
+      setStatus(t('contact.success_message'));
+      setIsSuccess(true);
+      formRef.current.reset();
+
+      // Trigger the conversion event if available
+      if (window.gtagSendEvent) {
+        window.gtagSendEvent();
+      }
+    } catch (error) {
+      console.log('Email sending failed:', error.text);
+      setStatus(t('contact.error_message'));
+      setIsSuccess(false);
+    } finally {
+      setLoading(false);
+      console.timeEnd('EmailJS Submission Time');
     }
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formState);
-    // Here you would typically send the form data to your backend
-    
-    // Show success message
-    setSnackbar({
-      open: true,
-      message: t('contactUs.form.successMessage', 'Your message has been sent successfully!'),
-      severity: 'success'
-    });
-    
-    // Reset form
-    setFormState({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-  };
-
-  const handleCloseSnackbar = () => {
-    setSnackbar(prev => ({
-      ...prev,
-      open: false
-    }));
-  };
-
   return (
-    <div className="contact-us-container">
+    <Layout>
+      {/* HelmetManager for SEO */}
+      <HelmetManager
+        title={t('contact_us.page_title')}
+        description={t('contact_us.page_description')}
+        canonical={canonicalUrl}
+        alternateLanguages={[
+          { lang: 'de', url: 'https://cyborg-it.de/de/contact-us' },
+          { lang: 'en', url: 'https://cyborg-it.de/en/contact-us' },
+        ]}
+        openGraph={{
+          title: t('contact_us.page_title'),
+          description: t('contact_us.page_description'),
+          image: 'https://cyborg-it.de/assets/Cyborg-og-image.jpg',
+          url: canonicalUrl,
+          type: 'website',
+        }}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Cyborg IT",
+          "url": "https://cyborg-it.de",
+          "logo": "https://cyborg-it.de/assets/Cyborg-logo-9-09-DqmwUbnN.png",
+          "sameAs": [
+            "https://www.linkedin.com/company/cyborg-it-l%C3%B6sungen/"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+995-598-70-79-79",
+            "contactType": "Customer Service"
+          }
+        }}
+      />
+
       {/* Hero Section */}
       <div className="contact-hero">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          {t('contactUs.title', 'Contact Us')}
-        </motion.h1>
+        {/* Optional background image or content */}
       </div>
 
-      <Container maxWidth="lg">
-        {/* Contact Information */}
-        <motion.div 
-          className="contact-info-section"
+      {/* Contact Form Section */}
+      <Container maxWidth="md" className="contact-container">
+        <motion.section
+          className="contact-section"
+          variants={sectionVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
+          animate="visible"
         >
-          <Typography variant="h2" component="h2" align="center" gutterBottom>
-            {t('contactUs.info.title', 'Get in Touch')}
+          <Typography variant="h3" className="h3" align="center" paragraph>
+            {t('contact_us.title')}
           </Typography>
-          
-          <Grid container spacing={4} justifyContent="center">
-            <Grid item xs={12} sm={4}>
-              <Paper elevation={3} className="info-card">
-                <PhoneIcon className="info-icon" />
-                <Typography variant="h6" component="h3">
-                  {t('contactUs.info.phone', 'Phone')}
-                </Typography>
-                <Typography variant="body1">
-                  +49 123 456 7890
-                </Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Paper elevation={3} className="info-card">
-                <EmailIcon className="info-icon" />
-                <Typography variant="h6" component="h3">
-                  {t('contactUs.info.email', 'Email')}
-                </Typography>
-                <Typography variant="body1">
-                  info@cyborg-it.de
-                </Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Paper elevation={3} className="info-card">
-                <LocationIcon className="info-icon" />
-                <Typography variant="h6" component="h3">
-                  {t('contactUs.info.address', 'Address')}
-                </Typography>
-                <Typography variant="body1">
-                  123 Tech Street, 10115 Berlin, Germany
-                </Typography>
-              </Paper>
-            </Grid>
-          </Grid>
-        </motion.div>
+          <Typography variant="h5" align="center" paragraph>
+            {t('contact_us.subtitle')}
+          </Typography>
 
-        {/* Contact Form */}
-        <motion.div 
-          className="contact-form-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-        >
-          <Typography variant="h2" component="h2" align="center" gutterBottom>
-            {t('contactUs.form.title', 'Send Us a Message')}
-          </Typography>
-          
-          <Box component="form" onSubmit={handleSubmit} className="contact-form">
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={6}>
-                <TextField
+          <Paper elevation={6} className="modern-form-container">
+            <form className="modern-contact-form" onSubmit={handleSubmit} ref={formRef}>
+              {/* Name Field */}
+              <Box
+                component={motion.div}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="input-wrapper"
+              >
+                <PersonOutlineIcon className="input-icon" aria-hidden="true" />
+                <input
+                  type="text"
+                  name="user_name"
+                  placeholder={t('contact_us.name')}
                   required
-                  fullWidth
-                  label={t('contactUs.form.name', 'Your Name')}
-                  name="name"
-                  value={formState.name}
-                  onChange={handleChange}
+                  aria-label={t('contact_us.name')}
                 />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  label={t('contactUs.form.email', 'Your Email')}
-                  name="email"
+              </Box>
+
+              {/* Email Field */}
+              <Box
+                component={motion.div}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="input-wrapper"
+              >
+                <EmailIcon className="input-icon" aria-hidden="true" />
+                <input
                   type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  label={t('contactUs.form.subject', 'Subject')}
-                  name="subject"
-                  value={formState.subject}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
+                  name="user_email"
+                  placeholder={t('contact_us.email')}
                   required
-                  fullWidth
-                  multiline
-                  rows={4}
-                  label={t('contactUs.form.message', 'Your Message')}
-                  name="message"
-                  value={formState.message}
-                  onChange={handleChange}
+                  aria-label={t('contact_us.email')}
+                  title={t('contact_us.email_title')}
                 />
-              </Grid>
-              <Grid item xs={12}>
-                <Button 
-                  type="submit" 
-                  variant="contained" 
-                  color="primary" 
-                  size="large"
+              </Box>
+
+              {/* Subject Field */}
+              <Box
+                component={motion.div}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="input-wrapper"
+              >
+                <SubjectIcon className="input-icon" aria-hidden="true" />
+                <input
+                  type="text"
+                  name="user_subject"
+                  placeholder={t('contact_us.subject')}
+                  aria-label={t('contact_us.subject')}
+                />
+              </Box>
+
+              {/* Message Field */}
+              <Box
+                component={motion.div}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="input-wrapper"
+              >
+                <ChatIcon className="input-icon" aria-hidden="true" />
+                <textarea
+                  rows="5"
+                  name="user_message"
+                  placeholder={t('contact_us.message')}
+                  required
+                  aria-label={t('contact_us.message')}
+                />
+              </Box>
+
+              {/* Submit Button */}
+              <Box textAlign="center" mt={3}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="secondary"
                   className="submit-button"
+                  disabled={loading}
                 >
-                  {t('contactUs.form.submit', 'Send Message')}
+                  {loading ? (
+                    <>
+                      {t('contact.sending')}{' '}
+                      <CircularProgress size={20} style={{ marginLeft: '10px' }} />
+                    </>
+                  ) : (
+                    t('contact_us.submit')
+                  )}
                 </Button>
-              </Grid>
-            </Grid>
-          </Box>
-        </motion.div>
+              </Box>
+            </form>
 
-        {/* Map Section - Placeholder */}
-        <motion.div 
-          className="map-section"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-        >
-          <Typography variant="h2" component="h2" align="center" gutterBottom>
-            {t('contactUs.map.title', 'Find Us')}
-          </Typography>
-          
-          <div className="map-container">
-            {/* This would be replaced with an actual map component */}
-            <Box
-              sx={{
-                width: '100%',
-                height: '400px',
-                backgroundColor: '#f0f0f0',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: '8px'
-              }}
-            >
-              <Typography variant="body1">
-                {t('contactUs.map.placeholder', 'Map will be displayed here')}
-              </Typography>
+            {/* Social Icons */}
+            <Box className="social-links-box" display="flex" justifyContent="center" mt={2}>
+              <IconButton
+                component="a"
+                href="https://www.linkedin.com/company/cyborg-it-l%C3%B6sungen/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon fontSize="large" style={{ color: '#0A66C2' }} />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="https://wa.me/995597011309"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                aria-label="WhatsApp"
+              >
+                <WhatsAppIcon fontSize="large" style={{ color: '#25D366' }} />
+              </IconButton>
             </Box>
-          </div>
-        </motion.div>
-      </Container>
+          </Paper>
 
-      <Snackbar 
-        open={snackbar.open} 
-        autoHideDuration={6000} 
-        onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
-        <Alert 
-          onClose={handleCloseSnackbar} 
-          severity={snackbar.severity}
-        >
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
-    </div>
+          {/* Status Message */}
+          {status && (
+            <Typography
+              variant="body1"
+              align="center"
+              className={`status-message ${isSuccess ? 'success' : 'error'}`}
+            >
+              {status}
+            </Typography>
+          )}
+        </motion.section>
+      </Container>
+    </Layout>
   );
 };
 
