@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
 import '@/app/globals.css';
 import '@/app/i18n';
 import './Layout.css';
@@ -33,7 +32,6 @@ export default function RootLayout({ children }) {
       <main className="main-content">
         {children}
       </main>
-      <Footer />
     </div>
   );
 } 

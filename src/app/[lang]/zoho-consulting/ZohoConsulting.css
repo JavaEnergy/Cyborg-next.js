@@ -1,7 +1,14 @@
 /* =======================================
+   MAIN CONTENT OVERRIDE
+======================================= */
+.main-content {
+  padding-top: 0 !important;
+}
+
+/* =======================================
    HERO SECTION
 ======================================= */
-.zoho-consulting-hero {
+.zoho-hero {
   position: relative;
   height: 60vh;
   display: flex;
@@ -75,7 +82,7 @@
 
 .zoho-service-card {
   cursor: pointer;
-  height: 100%;
+  height: 100%; /* ensures uniform height in the grid */
   display: flex;
   flex-direction: column;
 }
@@ -84,7 +91,7 @@
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100%; /* fill the entire container */
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
@@ -95,7 +102,7 @@
 
 .zoho-service-card .MuiCardContent-root {
   padding: 20px;
-  flex-grow: 1;
+  flex-grow: 1; /* push content to fill card height */
 }
 
 .zoho-service-card .MuiTypography-h5 {
@@ -150,8 +157,8 @@
 }
 
 .cta-button .MuiButton-root {
-  background-color: #9c27b0;
-  color: #ffffff;
+  background-color: #9c27b0; /* Purple Button Background */
+  color: #ffffff; /* White Text for Contrast */
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -160,7 +167,7 @@
 
 .cta-button .MuiButton-root:hover {
   background-color: #7b1fa2;
-  color: #ffffff;
+  color: #ffffff; /* White Text on Hover */
 }
 
 /* =======================================
@@ -198,7 +205,7 @@
 }
 
 .contact-form button {
-  background-color: #d4b051;
+  background-color: #d4b051; /* Match CTA Button Color */
   color: white;
   padding: 12px 30px;
   border: none;
@@ -215,14 +222,18 @@
    MODAL CONTENT
 ======================================= */
 .modal-content {
+  /* 
+    Material-UI's Modal places this in a portal, 
+    so it's effectively centered via its own system. 
+  */
   background-color: #fff;
   max-width: 600px;
   width: 90%;
-  margin: 100px auto;
+  margin: 100px auto; /* center on large screens */
   border-radius: 12px;
   padding: 30px;
-  outline: none;
-  max-height: 80vh;
+  outline: none; /* remove default outline */
+  max-height: 80vh; /* allow some scrolling if content is tall */
   overflow-y: auto;
 }
 
@@ -267,10 +278,5 @@
   .cta-button {
     font-size: 1rem;
     padding: 10px 20px;
-  }
-
-  .modal-content {
-    width: 95%;
-    padding: 20px;
   }
 } 

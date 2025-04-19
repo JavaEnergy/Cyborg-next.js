@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { 
   Card, 
@@ -33,20 +33,13 @@ import zohoCustomDevImage from '@/assets/images/Zoho.png';
 
 const ZohoConsulting = ({ params }) => {
   const { t, i18n } = useTranslation();
-  const router = useRouter();
-  const pathname = usePathname();
-  const currentLang = pathname.split('/')[1] || 'en';
+  const currentLang = params?.lang || 'en';
   const contactRef = useRef(null);
+  const router = useRouter();
+
+  // Modal states
+  const [openModal, setOpenModal] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
 
   // Framer Motion variants
   const sectionVariants = {
@@ -132,12 +125,12 @@ const ZohoConsulting = ({ params }) => {
   // Modal open/close handlers
   const handleOpenModal = (service) => {
     setSelectedService(service);
-    setIsModalOpen(true);
+    setOpenModal(true);
   };
 
   const handleCloseModal = () => {
     setSelectedService(null);
-    setIsModalOpen(false);
+    setOpenModal(false);
   };
 
   // CTA button click handler
@@ -322,7 +315,7 @@ const ZohoConsulting = ({ params }) => {
 
         {/* Modal for More Information */}
         <Modal
-          open={isModalOpen}
+          open={openModal}
           onClose={handleCloseModal}
           aria-labelledby="service-modal-title"
           aria-describedby="service-modal-description"
