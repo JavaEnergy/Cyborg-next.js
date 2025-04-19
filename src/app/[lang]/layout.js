@@ -2,61 +2,51 @@
 
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Footer from '../../components/Footer/Footer';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 import CookieConsent from 'react-cookie-consent';
-import { logEvent } from '../../firebase';
-import { reportWebVitals } from '../../firebase/reportWebVitals';
+import { logEvent } from '@/firebase';
+import { reportWebVitals } from '@/utils/web-vitals';
 import '../../i18n';
 
 export default function LangLayout({ children, params }) {
   const { t, i18n } = useTranslation();
-  // Unwrap params using React.use()
-  const unwrappedParams = React.use(params);
-  const routeLang = unwrappedParams?.lang;
+  const routeLang = params?.lang;
 
-  // Update language from path - now using unwrapped params
+  // Update language from path
   useEffect(() => {
-    const currentLang = i18n.language;
-    
-    // Only change language if routeLang is valid and different from current
-    if (routeLang && currentLang !== routeLang && (routeLang === 'en' || routeLang === 'de')) {
-      console.log(`Changing language from ${currentLang} to ${routeLang}`);
+    if (routeLang && (routeLang === 'en' || routeLang === 'de')) {
       i18n.changeLanguage(routeLang);
+      document.documentElement.lang = routeLang;
     }
   }, [routeLang, i18n]);
 
-  // Dynamically set the lang attribute
-  useEffect(() => {
-    document.documentElement.lang = i18n.language;
-  }, [i18n.language]);
-
   // Log web vitals and page view events
   useEffect(() => {
-    reportWebVitals(metric => {
-      const { name, value } = metric;
-      logEvent('web_vitals', {
-        metric_name: name,
-        metric_value: value,
-        url: window.location.href,
+    if (typeof window !== 'undefined') {
+      reportWebVitals(metric => {
+        const { name, value } = metric;
+        logEvent('web_vitals', {
+          metric_name: name,
+          metric_value: value,
+          url: window.location.href,
+        });
       });
-    });
 
-    // Log page view event
-    logEvent('page_view', {
-      page_path: window.location.pathname,
-      page_title: document.title || 'No Title',
-      language: i18n.language,
-    });
+      logEvent('page_view', {
+        page_path: window.location.pathname,
+        page_title: document.title || 'No Title',
+        language: i18n.language,
+      });
+    }
   }, [i18n.language]);
 
   return (
     <>
-      <main>
-        {children}
-      </main>
-      
+      <Header className="exclude-spider" />
+      <main>{children}</main>
       <Footer className="exclude-spider" />
-
+      
       {/* Cookie Consent Banner */}
       <CookieConsent
         location="bottom"

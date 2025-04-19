@@ -12,7 +12,7 @@ import './Layout.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({ children, params }) {
+export default function RootLayout({ children }) {
   const { i18n } = useTranslation();
   const pathname = usePathname();
   const headerRef = useRef(null);
@@ -22,18 +22,18 @@ export default function RootLayout({ children, params }) {
   useEffect(() => {
     // Get language from URL path
     const lang = pathname.split('/')[1] || 'en';
-    i18n.changeLanguage(lang);
+    if (i18n.language !== lang) {
+      i18n.changeLanguage(lang);
+    }
   }, [pathname, i18n]);
 
   return (
-    <html lang={currentLang}>
-      <body className={inter.className}>
-        <Header ref={headerRef} />
-        <main className="main-content">
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <div className={inter.className}>
+      <Header ref={headerRef} />
+      <main className="main-content">
+        {children}
+      </main>
+      <Footer />
+    </div>
   );
 } 

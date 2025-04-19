@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('@/assets/images/contact.png');
+  background-image: url('/assets/images/contact.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

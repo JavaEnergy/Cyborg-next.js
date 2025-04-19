@@ -6,6 +6,7 @@ import { Container, Typography, Button, Paper, IconButton, Box, CircularProgress
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import EmailIcon from '@mui/icons-material/Email';
@@ -116,7 +117,13 @@ const ContactUs = ({ params }) => {
 
       {/* Hero Section */}
       <div className="contact-hero">
-        {/* Optional background image or content */}
+        <Image
+          src="/assets/images/contact.png"
+          alt="Contact Us"
+          fill
+          style={{ objectFit: 'contain' }}
+          priority
+        />
       </div>
 
       {/* Contact Form Section */}

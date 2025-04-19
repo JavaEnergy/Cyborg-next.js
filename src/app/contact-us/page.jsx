@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Container, Typography, Button, Paper, IconButton, Box, CircularProgress } from '@mui/material';
 import { motion } from 'framer-motion';
@@ -14,6 +14,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
+import HelmetManager from '../../components/HelmetManager';
 import './ContactUs.css';
 
 export const metadata = {
@@ -56,6 +57,9 @@ const ContactUs = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // Build the canonical URL explicitly using the current language
+  const canonicalUrl = `https://cyborg-it.de/${i18n.language}/contact-us/`;
+
   // Animation variants for framer-motion
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -66,11 +70,18 @@ const ContactUs = () => {
     },
   };
 
+  // Emit 'page-loaded' event after component mounts
+  useEffect(() => {
+    window.dispatchEvent(new Event('page-loaded'));
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus('');
     setIsSuccess(false);
+
+    console.time('EmailJS Submission Time');
 
     try {
       const result = await emailjs.sendForm(
@@ -94,11 +105,45 @@ const ContactUs = () => {
       setIsSuccess(false);
     } finally {
       setLoading(false);
+      console.timeEnd('EmailJS Submission Time');
     }
   };
 
   return (
     <>
+      {/* HelmetManager for SEO */}
+      <HelmetManager
+        title={t('contact_us.page_title')}
+        description={t('contact_us.page_description')}
+        canonical={`https://cyborg-it.de/${i18n.language}/contact-us`}
+        alternateLanguages={[
+          { lang: 'de', url: 'https://cyborg-it.de/de/contact-us' },
+          { lang: 'en', url: 'https://cyborg-it.de/en/contact-us' },
+        ]}
+        openGraph={{
+          title: t('contact_us.page_title'),
+          description: t('contact_us.page_description'),
+          image: 'https://cyborg-it.de/assets/Cyborg-og-image.jpg',
+          url: `https://cyborg-it.de/${i18n.language}/contact-us`,
+          type: 'website',
+        }}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Cyborg IT",
+          "url": "https://cyborg-it.de",
+          "logo": "https://cyborg-it.de/assets/Cyborg-logo-9-09-DqmwUbnN.png",
+          "sameAs": [
+            "https://www.linkedin.com/company/cyborg-it-l%C3%B6sungen/"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+995-598-70-79-79",
+            "contactType": "Customer Service"
+          }
+        }}
+      />
+
       {/* Hero Section */}
       <div className="contact-hero">
         <Image
