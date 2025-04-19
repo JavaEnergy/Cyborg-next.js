@@ -15,33 +15,46 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Analytics only in browser environment
+let app = null;
 let analytics = null;
-if (typeof window !== 'undefined') {
-  isSupported().then(yes => yes && (analytics = getAnalytics(app)));
-}
-
-// Initialize Performance Monitoring
 let perf = null;
-if (typeof window !== 'undefined') {
-  perf = getPerformance(app);
-}
-
-// Initialize Installations only in browser environment
 let installations = null;
+
 if (typeof window !== 'undefined') {
   try {
-    // Only initialize installations if all required config values are present
-    if (firebaseConfig.apiKey && firebaseConfig.projectId) {
-      installations = getInstallations(app);
+    // Only initialize if all required config values are present
+    if (Object.values(firebaseConfig).every(value => value)) {
+      app = initializeApp(firebaseConfig);
+      
+      // Initialize Analytics
+      isSupported().then(yes => {
+        if (yes) {
+          try {
+            analytics = getAnalytics(app);
+          } catch (error) {
+            console.error('Firebase analytics initialization error:', error);
+          }
+        }
+      });
+
+      // Initialize Performance Monitoring
+      try {
+        perf = getPerformance(app);
+      } catch (error) {
+        console.error('Firebase performance initialization error:', error);
+      }
+
+      // Initialize Installations
+      try {
+        installations = getInstallations(app);
+      } catch (error) {
+        console.error('Firebase installations initialization error:', error);
+      }
     } else {
-      console.warn('Firebase installations not initialized: Missing required config values');
+      console.warn('Firebase not initialized: Missing required config values');
     }
   } catch (error) {
-    console.error('Firebase installations error:', error);
-    // Don't throw the error, just log it
+    console.error('Firebase initialization error:', error);
   }
 }
 

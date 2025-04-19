@@ -103,24 +103,7 @@ body {
 
 /* Consistent CTA Section */
 .cta-section {
-  background-color: #f8f9fa;
-  padding: 60px 20px;
-  text-align: center;
-  border-radius: 12px;
   margin: 60px 0;
-}
-
-.cta-button {
-  background-color: #D4B051;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #b89242;
 }
 
 /* Responsive Design */

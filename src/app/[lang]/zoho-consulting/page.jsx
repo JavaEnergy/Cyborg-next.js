@@ -1,9 +1,11 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';
+import { use } from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { 
   Card, 
   CardContent, 
@@ -22,6 +24,7 @@ import emailjs from '@emailjs/browser';
 import HelmetManager from '@/components/HelmetManager/HelmetManager';
 import Layout from '@/components/Layout/Layout';
 import ContactForm from '@/components/ContactForm/ContactForm';
+import OptimizedNextImage from '@/components/optimized/OptimizedNextImage';
 import './ZohoConsulting.css';
 
 // Import images
@@ -33,13 +36,14 @@ import zohoCustomDevImage from '@/assets/images/Zoho.png';
 
 const ZohoConsulting = ({ params }) => {
   const { t, i18n } = useTranslation();
-  const currentLang = params?.lang || 'en';
+  const resolvedParams = use(params);
+  const currentLang = resolvedParams?.lang || 'en';
   const contactRef = useRef(null);
   const router = useRouter();
 
   // Modal states
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
+  const [openModal, setOpenModal] = React.useState(false);
+  const [selectedService, setSelectedService] = React.useState(null);
 
   // Framer Motion variants
   const sectionVariants = {

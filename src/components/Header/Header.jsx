@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
-import OptimizedImageCaseInsensitive from '../OptimizedImageCaseInsensitive';
+import OptimizedNextImage from '../optimized/OptimizedNextImage';
 
 // Import icons from MUI
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -42,7 +42,11 @@ const Header = forwardRef(({ className = '' }, ref) => {
     setIsSmallScreen(window.innerWidth <= 400);
   }, []);
 
-  const currentLang = i18n.language;
+  const currentLang = useMemo(() => {
+    if (!hasMounted) return 'en'; // Default during SSR
+    return i18n.language;
+  }, [hasMounted, i18n.language]);
+
   const isGerman = currentLang === 'de';
 
   useEffect(() => {
@@ -79,6 +83,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
   };
 
   const isActiveLink = (link) => {
+    if (!hasMounted) return false; // Prevent hydration mismatch
     const linkPathname = link.split('#')[0].replace(/\/$/, '');
     const currentPathnameCleaned = pathname.replace(/\/$/, '');
     return currentPathnameCleaned === linkPathname;
@@ -215,7 +220,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
                 onClick={() => changeLanguage('de')}
                 aria-label="German Language"
               >
-                <OptimizedImageCaseInsensitive
+                <OptimizedNextImage
                   src={logode}
                   alt="German flag for language selection"
                   width={50}
@@ -227,7 +232,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
                 onClick={() => changeLanguage('en')}
                 aria-label="English Language"
               >
-                <OptimizedImageCaseInsensitive
+                <OptimizedNextImage
                   src={logouk}
                   alt="English flag for language selection"
                   width={50}
@@ -256,7 +261,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
             onClick={goToHome}
             style={{ cursor: 'pointer' }}
           >
-            <OptimizedImageCaseInsensitive
+            <OptimizedNextImage
               src={isScrolled ? logoDark : logo}
               alt="Cyborg Automation logo"
               width={250}
@@ -564,7 +569,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
                   onClick={() => changeLanguage('de')}
                   aria-label="German Language"
                 >
-                  <OptimizedImageCaseInsensitive
+                  <OptimizedNextImage
                     src={logode}
                     alt="German flag for language selection"
                     width={50}
@@ -576,7 +581,7 @@ const Header = forwardRef(({ className = '' }, ref) => {
                   onClick={() => changeLanguage('en')}
                   aria-label="English Language"
                 >
-                  <OptimizedImageCaseInsensitive
+                  <OptimizedNextImage
                     src={logouk}
                     alt="English flag for language selection"
                     width={50}

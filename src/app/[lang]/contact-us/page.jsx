@@ -6,6 +6,7 @@ import { Container, Typography, Button, Paper, IconButton, Box, CircularProgress
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { useRouter } from 'next/navigation';
+import { use } from 'react';
 import Image from 'next/image';
 
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
@@ -21,6 +22,8 @@ import './ContactUs.css';
 
 const ContactUs = ({ params }) => {
   const { t, i18n } = useTranslation();
+  const resolvedParams = use(params);
+  const currentLang = resolvedParams?.lang || 'en';
   const formRef = useRef(null);
   const router = useRouter();
 
@@ -29,7 +32,7 @@ const ContactUs = ({ params }) => {
   const [loading, setLoading] = useState(false);
 
   // Build the canonical URL explicitly using the current language
-  const canonicalUrl = `https://cyborg-it.de/${params.lang}/contact-us`;
+  const canonicalUrl = `https://cyborg-it.de/${currentLang}/contact-us`;
 
   // Animation variants for framer-motion
   const sectionVariants = {
@@ -40,6 +43,13 @@ const ContactUs = ({ params }) => {
       transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
+
+  // Update language from path
+  useEffect(() => {
+    if (currentLang && (currentLang === 'en' || currentLang === 'de')) {
+      i18n.changeLanguage(currentLang);
+    }
+  }, [currentLang, i18n]);
 
   // Emit 'page-loaded' event after component mounts
   useEffect(() => {

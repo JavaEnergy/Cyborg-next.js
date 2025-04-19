@@ -1,19 +1,30 @@
 'use client';
 
-import React, { forwardRef } from 'react';
-import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState } from 'react';
 import './Footer.css';
+import Link from 'next/link';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
+import { useTranslation } from 'react-i18next';
 
-const Footer = forwardRef(({ className = '' }, ref) => {
+const Footer = ({ className = '' }) => {
   const { t, i18n } = useTranslation();
-  const currentLang = i18n.language;
+  const [currentLang, setCurrentLang] = useState('en');
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+    setCurrentLang(i18n.language);
+  }, [i18n.language]);
+
+  // Don't render anything until after hydration
+  if (!hasMounted) {
+    return null;
+  }
 
   return (
-    <footer ref={ref} className={`footer ${className} exclude-spider`}>
+    <footer className={`footer ${className} exclude-spider`}>
       <div className="footer-container">
         {/* Contact Information */}
         <div className="footer-section contact-info">
@@ -21,48 +32,11 @@ const Footer = forwardRef(({ className = '' }, ref) => {
           <p>+995 597 01 13 09</p>
           <p>(+ WhatsApp, iMessage)</p>
           <br />
-          <p>
-            Email:{' '}
-            <a href="mailto:info@cyborg-it.de">info@cyborg-it.de</a>
-          </p>
-          <p className="contactable-notice">
-            {t('footer.contactable_24_7')}
-          </p>
-        </div>
-
-        {/* Social Media */}
-        <div className="footer-section social-media">
-          <h3>{t('footer.social')}</h3>
-          <div className="social-icons">
-            <a
-              href="https://www.linkedin.com/company/cyborg-it-l%C3%B6sungen/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon fontSize="large" />
-            </a>
-            <a
-              href="https://wa.me/995597011309"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <WhatsAppIcon fontSize="large" />
-            </a>
-            <a
-              href="mailto:info@cyborg-it.de"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Email"
-            >
-              <EmailIcon fontSize="large" />
-            </a>
-          </div>
+          <p>{t('footer.contactable_24_7')}</p>
         </div>
 
         {/* Company Links */}
-        <div className="footer-section company-links">
+        <div className="footer-section">
           <h3>{t('footer.company')}</h3>
           <ul>
             <li>
@@ -79,7 +53,7 @@ const Footer = forwardRef(({ className = '' }, ref) => {
         </div>
 
         {/* Useful Links */}
-        <div className="footer-section useful-links">
+        <div className="footer-section">
           <h3>{t('footer.useful_links')}</h3>
           <ul>
             <li>
@@ -94,6 +68,35 @@ const Footer = forwardRef(({ className = '' }, ref) => {
             </li>
           </ul>
         </div>
+
+        {/* Social Media */}
+        <div className="footer-section social-links">
+          <h3>{t('footer.social')}</h3>
+          <div className="social-icons">
+            <a
+              href="https://www.linkedin.com/company/cyborg-it-l%C3%B6sungen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
+            <a
+              href="https://wa.me/995597011309"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <WhatsAppIcon />
+            </a>
+            <a
+              href="mailto:info@cyborg-it.de"
+              aria-label="Email"
+            >
+              <EmailIcon />
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Footer Bottom */}
@@ -105,8 +108,6 @@ const Footer = forwardRef(({ className = '' }, ref) => {
       </div>
     </footer>
   );
-});
-
-Footer.displayName = 'Footer';
+};
 
 export default Footer; 

@@ -8,10 +8,12 @@ import CookieConsent from 'react-cookie-consent';
 import { logEvent } from '@/firebase';
 import { reportWebVitals } from '@/utils/web-vitals';
 import '../../i18n';
+import { use } from 'react';
 
 export default function LangLayout({ children, params }) {
   const { t, i18n } = useTranslation();
-  const routeLang = params?.lang;
+  const resolvedParams = use(params);
+  const routeLang = resolvedParams?.lang;
 
   // Update language from path
   useEffect(() => {
