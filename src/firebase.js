@@ -20,53 +20,61 @@ let analytics = null;
 let perf = null;
 let installations = null;
 
-if (typeof window !== 'undefined') {
+const initializeFirebase = () => {
+  if (typeof window === 'undefined') return;
+
   try {
     // Only initialize if all required config values are present
-    if (Object.values(firebaseConfig).every(value => value)) {
-      app = initializeApp(firebaseConfig);
-      
-      // Initialize Analytics
-      isSupported().then(yes => {
-        if (yes) {
-          try {
-            analytics = getAnalytics(app);
-          } catch (error) {
-            console.error('Firebase analytics initialization error:', error);
-          }
+    const configValues = Object.values(firebaseConfig);
+    if (configValues.some(value => !value)) {
+      console.error('Missing Firebase configuration values');
+      return;
+    }
+
+    app = initializeApp(firebaseConfig);
+    
+    // Initialize Analytics
+    isSupported().then(yes => {
+      if (yes) {
+        try {
+          analytics = getAnalytics(app);
+        } catch (error) {
+          console.error('Firebase analytics initialization error:', error);
         }
-      });
-
-      // Initialize Performance Monitoring
-      try {
-        perf = getPerformance(app);
-      } catch (error) {
-        console.error('Firebase performance initialization error:', error);
       }
+    });
 
-      // Initialize Installations
-      try {
-        installations = getInstallations(app);
-      } catch (error) {
-        console.error('Firebase installations initialization error:', error);
-      }
-    } else {
-      console.warn('Firebase not initialized: Missing required config values');
+    // Initialize Performance Monitoring
+    try {
+      perf = getPerformance(app);
+    } catch (error) {
+      console.error('Firebase performance initialization error:', error);
+    }
+
+    // Initialize Installations
+    try {
+      installations = getInstallations(app);
+    } catch (error) {
+      console.error('Firebase installations initialization error:', error);
     }
   } catch (error) {
     console.error('Firebase initialization error:', error);
   }
-}
+};
 
-// Function to log events
-const logEvent = (eventName, eventParams) => {
-  if (typeof window !== 'undefined' && analytics) {
+// Initialize Firebase when the module is imported
+initializeFirebase();
+
+// Export the initialized services
+export { app, analytics, perf, installations };
+
+// Log event function
+export const logEvent = (eventName, eventParams) => {
+  if (analytics) {
     try {
       firebaseLogEvent(analytics, eventName, eventParams);
     } catch (error) {
-      console.error('Firebase analytics error:', error);
+      console.error('Error logging event:', error);
     }
   }
-};
-
-export { app, analytics, perf, installations, logEvent }; 
+}; 
