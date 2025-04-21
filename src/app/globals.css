@@ -16,6 +16,21 @@ body {
   line-height: 1.6;
 }
 
+/* Layout Container */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  flex: 1 0 auto;
+  width: 100%;
+  position: relative;
+}
+
 /* Consistent Hero Section */
 .page-hero {
   position: relative;
@@ -28,6 +43,7 @@ body {
   background-repeat: no-repeat;
   color: white;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin-top: 0;
 }
 
 .page-hero::before {
@@ -199,33 +215,8 @@ body {
   color: #99ccff;
 }
 
-/* Main content */
-main {
-  min-height: 100vh;
-}
-
-/* Layout styles for header, main content, and footer */
-html, body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.main-content {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  padding-top: 120px; /* Adjust based on your header height */
-  width: 100%;
-}
-
+/* Footer */
 footer {
   flex-shrink: 0;
+  width: 100%;
 }

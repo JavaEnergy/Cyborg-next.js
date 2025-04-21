@@ -1,7 +1,11 @@
 'use client';
 
+import React from 'react';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import './i18n';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Cyborg IT Technology',
@@ -23,10 +27,13 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params }) {
   return (
-    <html>
-      <body>
+    <html lang={params.lang || 'en'}>
+      <head>
+        <link rel="icon" href="/Cyborg-logo 11-11.png" type="image/png" />
+      </head>
+      <body className={inter.className}>
         {children}
       </body>
     </html>

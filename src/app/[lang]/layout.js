@@ -2,16 +2,14 @@
 
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
-import CookieConsent from 'react-cookie-consent';
 import { logEvent } from '@/firebase';
 import { reportWebVitals } from '@/utils/web-vitals';
+import Layout from '@/components/Layout/Layout';
 import '../../i18n';
 import { use } from 'react';
 
 export default function LangLayout({ children, params }) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const resolvedParams = use(params);
   const routeLang = resolvedParams?.lang;
 
@@ -43,28 +41,5 @@ export default function LangLayout({ children, params }) {
     }
   }, [i18n.language]);
 
-  return (
-    <>
-      <Header className="exclude-spider" />
-      <main>{children}</main>
-      <Footer className="exclude-spider" />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsent
-        location="bottom"
-        buttonText={t('cookieConsent.button')}
-        cookieName="cyborgCookieConsent"
-        className="cookie-consent"
-        buttonClasses="cookie-consent-button"
-        expires={150}
-      >
-        <span className="cookie-message">
-          {t('cookieConsent.message')}{' '}
-          <a href={`/${i18n.language}/legal`} className="cookie-learn-more">
-            {t('cookieConsent.learnMore')}
-          </a>
-        </span>
-      </CookieConsent>
-    </>
-  );
+  return <Layout>{children}</Layout>;
 }

@@ -22,17 +22,17 @@ import {
 import { Email } from '@mui/icons-material';
 import emailjs from '@emailjs/browser';
 import HelmetManager from '@/components/HelmetManager/HelmetManager';
-import Layout from '@/components/Layout/Layout';
 import ContactForm from '@/components/ContactForm/ContactForm';
 import OptimizedNextImage from '@/components/optimized/OptimizedNextImage';
+import Image from 'next/image';
 import './ZohoConsulting.css';
 
 // Import images
-import zohoCRMImage from '@/assets/images/crm.png';
-import zohoMarketingImage from '@/assets/images/marketing.png';
-import zohoFinanceImage from '@/assets/images/finance.png';
-import zohoHRImage from '@/assets/images/people.png';
-import zohoCustomDevImage from '@/assets/images/Zoho.png';
+import zohoCRMImage from '@/public/assets/images/crm.png';
+import zohoMarketingImage from '@/public/assets/images/marketing.png';
+import zohoFinanceImage from '@/public/assets/images/finance.png';
+import zohoHRImage from '@/public/assets/images/people.png';
+import zohoCustomDevImage from '@/public/assets/images/Zoho.png';
 
 const ZohoConsulting = ({ params }) => {
   const { t, i18n } = useTranslation();
@@ -143,7 +143,7 @@ const ZohoConsulting = ({ params }) => {
   };
 
   return (
-    <Layout>
+    <>
       <HelmetManager
         title={t('zoho_consulting.page_title')}
         description={t('zoho_consulting.page_description')}
@@ -242,18 +242,16 @@ const ZohoConsulting = ({ params }) => {
                       }}
                     >
                       <Card className="card">
-                        <img
-                          src={service.image}
-                          alt={service.alt}
-                          loading="lazy"
-                          width="300"
-                          height="180"
-                          style={{
-                            objectFit: 'contain',
-                            width: '300px',
-                            height: '180px',
-                          }}
-                        />
+                        <div style={{ position: 'relative', width: '100%', height: '180px' }}>
+                          <Image
+                            src={service.image}
+                            alt={service.alt}
+                            fill
+                            style={{
+                              objectFit: 'contain'
+                            }}
+                          />
+                        </div>
                         <CardContent>
                           <Typography variant="h5" gutterBottom>
                             {service.title}
@@ -352,7 +350,7 @@ const ZohoConsulting = ({ params }) => {
           </motion.div>
         </Modal>
       </div>
-    </Layout>
+    </>
   );
 };
 

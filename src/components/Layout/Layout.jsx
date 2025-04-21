@@ -1,37 +1,42 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { usePathname } from 'next/navigation';
-import { Inter } from 'next/font/google';
-import Header from '@/components/Header/Header';
-import '@/app/globals.css';
-import '@/app/i18n';
-import './Layout.css';
+import Footer from '@/components/Footer/Footer';
+import CookieConsent from 'react-cookie-consent';
+import '@/i18n';
 
-const inter = Inter({ subsets: ['latin'] });
-
-export default function RootLayout({ children }) {
-  const { i18n } = useTranslation();
-  const pathname = usePathname();
-  const headerRef = useRef(null);
-  // Get language from URL path
-  const currentLang = pathname.split('/')[1] || 'en';
-
-  useEffect(() => {
-    // Get language from URL path
-    const lang = pathname.split('/')[1] || 'en';
-    if (i18n.language !== lang) {
-      i18n.changeLanguage(lang);
-    }
-  }, [pathname, i18n]);
+const Layout = ({ children }) => {
+  const { t, i18n } = useTranslation();
 
   return (
-    <div className={inter.className}>
-      <Header ref={headerRef} />
-      <main className="main-content">
+    <div className="layout-container">
+      <div className="content-wrapper" style={{ 
+        minHeight: 'calc(100vh - 80px)',
+        paddingTop: '20px'
+      }}>
         {children}
-      </main>
+      </div>
+      <Footer className="exclude-spider" />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsent
+        location="bottom"
+        buttonText={t('cookieConsent.button')}
+        cookieName="cyborgCookieConsent"
+        className="cookie-consent"
+        buttonClasses="cookie-consent-button"
+        expires={150}
+      >
+        <span className="cookie-message">
+          {t('cookieConsent.message')}{' '}
+          <a href={`/${i18n.language}/legal`} className="cookie-learn-more">
+            {t('cookieConsent.learnMore')}
+          </a>
+        </span>
+      </CookieConsent>
     </div>
   );
-} 
+};
+
+export default Layout; 

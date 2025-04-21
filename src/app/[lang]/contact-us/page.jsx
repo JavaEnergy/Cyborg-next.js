@@ -16,7 +16,6 @@ import ChatIcon from '@mui/icons-material/Chat';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-import Layout from '@/components/Layout/Layout';
 import HelmetManager from '@/components/HelmetManager/HelmetManager';
 import './ContactUs.css';
 
@@ -91,8 +90,7 @@ const ContactUs = ({ params }) => {
   };
 
   return (
-    <Layout>
-      {/* HelmetManager for SEO */}
+    <>
       <HelmetManager
         title={t('contact_us.page_title')}
         description={t('contact_us.page_description')}
@@ -287,7 +285,7 @@ const ContactUs = ({ params }) => {
           )}
         </motion.section>
       </Container>
-    </Layout>
+    </>
   );
 };
 
